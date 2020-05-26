@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>swmovie</title>
+</head>
+
+<link rel="stylesheet" href="css/style.css">
+
+
+
+
+
+<body>
+    
+    <div id="wrap">
+        <header id="header">
+            <h1><a href="#"></a>SY.MOVIE</h1>
+            <img src="images/micon.png" alt="#">
+            <nav class="nav">
+                <ul>
+                    <li><a href="#">예매</a>
+                        <ul >
+                            <li>sub Menu-1</li>
+                            <li>sub Menu-2</li>
+                            <li>sub Menu-3</li>
+                            <li>sub Menu-4</li>
+                            <li>sub Menu-5</li>
+                        </ul>
+                    </li>
+                    <li><a href="#">박스오피스</a>
+                        <ul >
+                            <li>sub Menu-1</li>
+                            <li>sub Menu-2</li>
+                            <li>sub Menu-3</li>
+                            <li>sub Menu-4</li>
+                            <li>sub Menu-5</li>
+                        </ul>
+                    </li>
+                    <li><a href="#">개봉예정작</a>
+                        <ul >
+                            <li>sub Menu-1</li>
+                            <li>sub Menu-2</li>
+                            <li>sub Menu-3</li>
+                            <li>sub Menu-4</li>
+                            <li>sub Menu-5</li>
+                        </ul>
+                    </li>
+                    <li><a href="#">현재개봉작</a>
+                        <ul >
+                            <li>sub Menu-1</li>
+                            <li>sub Menu-2</li>
+                            <li>sub Menu-3</li>
+                            <li>sub Menu-4</li>
+                            <li>sub Menu-5</li>
+                        </ul>
+                    </li>
+                    <li><a href="#">평점순</a>
+                        <ul >
+                            <li>sub Menu-1</li>
+                            <li>sub Menu-2</li>
+                            <li>sub Menu-3</li>
+                            <li>sub Menu-4</li>
+                            <li>sub Menu-5</li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!--//header-->
+
+        <section id="contents1">
+            <div class="ad">
+                <h3><a href="#">첫번째 영화</a></h3>
+                <div class="cont1">
+                        <img src="images/movie001.jpg" alt="최근개봉">
+                        <em>예매하기</em>
+                </div>
+            </div>
+        </section>
+        <!--//contents1-->
+
+        <section id="contents2">
+            <div class="ad">
+                <h3><a href="#">두번째 영화</a></h3>
+                <div class="cont2">
+                    <img src="images/movie002.jpg" alt="최근개봉">
+                    <em>예매하기</em>
+            </div>
+            </div>
+        </div>
+        <!--//contents2-->
+
+        <section id="contents3">
+            <div class="ad">
+                <h3><a href="#">세번째 영화</a></h3>
+                <div class="cont3">
+                    <img src="images/movie003.jpg" alt="최근개봉">
+                    <em>예매하기</em>
+            </div>
+            </div>
+        </section>
+        <!--//contents3-->
+
+        <section id="contents4">
+            <h2>주간 BEST</h2>
+            <ul class="clearfix">
+                <li><a href="#"><img src="images/smovie1.jpg" alt="순위1"><em>예매하기</em></a></li>
+                <li><a href="#"><img src="images/smovie2.jpg" alt="순위2"><em>예매하기</em></a></li>
+                <li><a href="#"><img src="images/smovie3.jpg" alt="순위3"><em>예매하기</em></a></li>
+                <li><a href="#"><img src="images/smovie5.jpg" alt="순위4"><em>예매하기</em></a></li>
+            </ul>
+        </section>
+        <!--//contents4-->
+
+            <footer id="footer">
+                <address>
+                    <ul>
+                        <li>상호명: SY.MOVIE</li>
+                        <li>주소: 경기도 안산시 중앙역 부근 어딘가</li>
+                        <li>대표번호: 031-365-5008</li>
+                    </ul>
+                    <p>dongil8201@hanmail.net</p>
+                </address>
+            </footer>
+        
+    </div>
+
+
+</body>
+
+<script src="jquery.min_1.12.4.js"></script>
+
+<script>
+    $(".nav ul li ul").hide();
+    $(".nav ul li a").click(function(){
+    $(this).next("ul").slideToggle(100);
+});
+
+$(function(){
+        $(".ad").on({
+        "mouseover" : function (){
+            $(".ad").css({"color" : "black"});
+        },
+        "mouseout" : function(){
+            $(".ad").css({"color" : "none"});
+        }
+      })
+    });
+
+</script>
+
+
+   
+
+</html>
