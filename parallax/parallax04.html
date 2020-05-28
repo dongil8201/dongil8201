@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parallax04</title>
 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    
     <style>
-        /* reset */
-        * {margin: 0; padding: 0; box-sizing: border-box;}
+       /* reset */
+       * {margin: 0; padding: 0; box-sizing: border-box;}
         li {list-style: none;}
         a {text-decoration: none; color: #fff; font-family: 'Lato', sans-serif;}
         :root {
@@ -121,13 +123,13 @@
 
         /*info*/
         .info{
-            position: fixed; top: 20px; right: 20px;
+            position: fixed; bottom: 20px; right: 90px;
             background: rgba(255,255,255,0.4);
             color: #000; padding: 10px;
             font-size: 14px; font-weight: 300;
             z-index: 10000;
             font-style: normal;
-            font-family: 'Abel';
+            font-family: 'RobotoMono';
         }
 
         .contents > section {
@@ -138,8 +140,45 @@
         .contents > section.show {
             opacity: 1; transform: rotateY(0px);
         }
+
+        /*title*/
+        .title{
+            position: fixed; top: 20px; right: 30px;
+        }
+        .title h1{
+            padding-bottom: 20px;
+        }
+        .title p {
+            padding-bottom: 20px;
+        }
+        .title li{
+            padding-bottom: 5px;
+        }
+        .title li a {
+            font-size: 16px;
+            font-family: 'RobotoMono';
+        }
+        .title li.active a {
+            border-bottom: 1px dashed #fff;
+        }
+
     </style>
 </head>
+<body>
+    <div class="title">
+        <h1>Parallax04</h1>
+        <p>자바스크립트를 이용한 </p>
+        <ul>
+            <li><a href="parallax01.html">parallax01</a></li>
+            <li><a href="parallax02.html">parallax02</a></li>
+            <li><a href="parallax03.html">parallax03</a></li>
+            <li class="active"><a href="parallax04.html">parallax04</a></li>
+            <li><a href="parallax05.html">parallax05</a></li>
+            <li><a href="parallax06.html">parallax06</a></li>
+            <li><a href="parallax07.html">parallax07</a></li>
+            <li><a href="">parallax08</a></li>
+        </ul>
+    </div>
 <body>
 
 

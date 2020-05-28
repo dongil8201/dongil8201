@@ -9,9 +9,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
-    *{margin: 0; padding: 0; box-sizing: 0;}
-    a{text-decoration: none; color:#666;}
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+    a{text-decoration: none; color:#fff;}
     img{width: 100%; vertical-align: top;}
+    ul{padding: 10px 20px;}
 
     body{
         background: url(img/p1.jpg) no-repeat;
@@ -29,6 +30,17 @@
     .info{
         position: absolute; left: 0; top: 0; z-index: 1000;
         padding: 20px;
+    }
+    .info2 {
+            position: absolute; right: 0; top: 0; z-index: 1000;
+            padding: 20px;
+        }
+    .info2 li {
+        list-style: none;
+        margin-bottom: 5px;
+    }
+    .info2 li.active a {
+        border-bottom: 1px dashed #fff;
     }
 
         
@@ -60,6 +72,19 @@
     <div class="info">
         <h1>Image slide01</h1>
         <p>페이드 효과 이미지 슬라이드</p>
+    </div>
+    <div class="info2">
+        <ul>
+            <li class="active"><a href="slide01.html">slide01</a></li>
+            <li><a href="slide02.html">slide02</a></li>
+            <li><a href="slide02.html">slide03</a></li>
+            <li><a href="slide03.html">slide04</a></li>
+            <li><a href="slide04.html">slide05</a></li>
+            <li><a href="slide05.html">slide06</a></li>
+            <li><a href="slide06.html">slide07</a></li>
+            <li><a href="slide07.html">slide08</a></li>
+            <li><a href="slide08.html">slide09</a></li>
+        </ul>
     </div>
     
 

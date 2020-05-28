@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slide-페이드 효과 이미지 슬라이드</title>
+</head>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+        a {text-decoration: none; color: #fff;}
+        img {width: 100%; vertical-align: top;}
+        ul {padding: 10px 20px;}
+        body {
+            background: url(img/p1.jpg) no-repeat; 
+            background-size: cover;
+            font-family: "Roboto Mono";
+            color: #fff;
+            height: 100vh;
+        }
+        body::before {
+            content: '';
+            position: absolute; left: 0; top: 0;
+            width: 100%; height: 100vh;
+            background: rgba(50,37,11,0.86);
+            z-index: -1;
+        }
+        .info {
+            position: absolute; left: 0; top: 0; z-index: 1000;
+            padding: 20px;
+        }
+        .info h1 {
+            margin-bottom: 10px;
+        }
+        .info2 {
+            position: absolute; right: 0; top: 0; z-index: 1000;
+            padding: 20px;
+        }
+        .info2 li {
+            list-style: none;
+            margin-bottom: 5px;
+        }
+        .info2 li.active a {
+            border-bottom: 1px dashed #fff;
+        }
+
+        
+    /*slide*/
+    .slide-warp {
+        width: 1000px; height: 600px;
+        overflow: hidden;
+        position: absolute; left: 50%; top: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 4px 4px 20px rgba(0,0,0,.5);
+    }
+    .slide-img{
+        position: relative;
+        overflow: hidden;
+        box-shadow: 4px 4px 20px rgba(0,0,0,.5);
+        width: 5000px;
+        }
+
+    .slide-img .slides{
+        float: left; 
+        position: relative;
+        
+    }
+    .slide-img  .slides span{
+        position: absolute; left: 10px; top: 10px;
+    }
+
+    .slider-btn a {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%, -50%);
+        z-index: 1000;
+        padding: 20px;
+        background: rgba(0,0,0,.5);
+        text-transform: uppercase;
+        
+    }
+    .slider-btn a.prev{
+        left: 0;
+    }
+    .slider-btn a.next{
+        right: 0;
+    }
+.slider-dot {
+    position: fixed; bottom: 20px; left: 50%;
+    transform: translate(-50%);
+}
+.slider-dot a{
+    width: 20px; height: 20px;
+    background: rgba(0,0,0,0.6);
+    display: inline-block;
+    border-radius: 50%;
+    margin: 5px;
+    text-indent: -9999px;
+    transition: background 0.3s;
+}
+.slider-dot a.active{
+    background:rgba(255,255,255,.9);
+}
+
+</style>
+
+
+<body>
+    <div class="info">
+        <h1>Image slide08</h1>
+        <p>좌로 움직이기</p>
+        <ul>
+            <li>연속적으로 움직이기</li>
+            <li>버튼 만들기</li>
+            <li>닷 버튼 만들기</li>
+        </ul>
+    </div>
+    <div class="info2">
+        <ul>
+            <li><a href="slide01.html">slide01</a></li>
+            <li><a href="slide02.html">slide02</a></li>
+            <li><a href="slide03.html">slide03</a></li>
+            <li><a href="slide04.html">slide04</a></li>
+            <li><a href="slide05.html">slide05</a></li>
+            <li><a href="slide06.html">slide06</a></li>
+            <li><a href="slide07.html">slide07</a></li>
+            <li class="active"><a href="slide08.html">slide08</a></li>
+            <li><a href="slide09.html">slide09</a></li>
+        </ul>
+    </div>
+    
+    <!--slider-->
+
+    <div class="slide-warp">
+        <div class="slide-img">
+            <div class="slides s1"><img src="img/p1.jpg" alt="이미지1"><span>1</span></div>
+            <div class="slides s2"><img src="img/p2.jpg" alt="이미지2"><span>2</span></div>
+            <div class="slides s3"><img src="img/p3.jpg" alt="이미지3"><span>3</span></div>
+            <div class="slides s4"><img src="img/p4.jpg" alt="이미지4"><span>4</span></div>
+            <div class="slides s5"><img src="img/p5.jpg" alt="이미지5"><span>5</span></div>
+        </div>
+    </div>
+
+    <div class="slider-btn">
+        <a href="#" class="prev">prev</a>
+        <a href="#" class="next">next</a>
+    </div>
+   
+    <div class="slider-dot">
+        <a href="#" class="dot active">1</a>
+        <a href="#" class="dot">2</a>
+        <a href="#" class="dot">3</a>
+        <a href="#" class="dot">4</a>
+        <a href="#" class="dot">5</a>
+    </div>
+   
+
+    <!--script-->
+
+    <script src="js/jquery.min_1.12.4.js"></script>
+    <script>
+        const slideWarp =$(".slide-warp");
+        const slideImg =$(".slide-img");
+        const slides = $(".slides");
+        const slideBtn = $(".slider-btn");
+        const sliderDot = $(".slider-dot");
+
+        let slideCount = slides.length;
+        let slideWidth = slides.width();
+        let slideHeight = slides.height();
+        let slideTotalWidth = slideCount * slideWidth;
+        
+        let currenIndex = 0;
+        let dotIndex ="";
+
+        //이미지 갯수만큼 닷메뉴를 표현
+        slides.each(function(index){
+            //console.log(index)
+            dotIndex += "<a href='#'></a>";
+            console.log(dotIndex)
+        })
+        sliderDot.html(dotIndex);
+        sliderDot.find("a").eq(0).addClass("active");
+
+        function gotoSlider(index){
+            console.log("index:" + index);
+
+            slideImg.animate({left:-slideWidth * index +"px"},400)
+            currenIndex = index;
+            updateDot()
+        }
+
+        function updateDot(){
+            sliderDot.find("a").removeClass().eq(currenIndex).addClass("active");
+        }
+
+        //숙제
+        //버튼을 클릭합니다.
+        slideBtn.on("click", "a" function(){
+            if(  $(this).hasClass("")){
+                
+            }
+        });
+
+        
+
+        //slideBtn.on("click","a", function(){
+        //if( $(this).hasClass("prev")){
+        //    moveLeft()
+        //}else{
+        //    moveRight()
+        //}
+       //});     
+        //active 있는지 확인
+        //active 없을 때 닷 메뉴 순서 번호 추출
+        //gotoSlide(index)
+
+        //버튼 클릭하기
+        slideBtn.on("click", "a", function(e){
+            e.preventDefault();
+
+            let nextIndex = (currenIndex +1) % slideCount
+            let prevIndex = (currenIndex -1) % slideCount
+            if(currenIndex == 0){
+                prevIndex = slideCount -1;
+            }
+
+            if($(this).hasClass("prev")){
+                gotoSlider(prevIndex);
+            }else{
+                gotoSlider(nextIndex);
+            }
+        });
+
+        //오른쪽 버큰을 클릭하면 currenIndex 1,2,3,4,5 1++ //01234, 01234, 01234
+        //왼쪽 버튼을 클릭하면 currenIndex 1--
+
+
+
+
+        
+
+
+        /*
+        slides.css({width:slideWidth, height:slideHeight});
+        slideImg.css({width:slideTotalWidth, height:slideHeight});
+        slideImg.css({"margin-left" : -slideWidth});
+        $(".slides:last-child").prependTo(slideImg);
+
+        function moveLeft(){
+            slideImg.animate({left: +slideWidth},400, function(){
+                $(".slides:last-child").prependTo(slideImg);
+                slideImg.css("left","");
+            })
+        }
+
+        function moveRight(){
+            slideImg.animate({left: -slideWidth},400, function(){
+                $(".slides:first-child").appendTo(slideImg);
+                slideImg.css("left","");
+            })
+        }
+        */
+
+
+       /*버튼 클릭하기
+        slideBtn.find(".prev").click(function(){
+            moveLeft()
+        });
+
+        slideBtn.find(".next").click(function(){
+            moveRight()
+        }); 
+        */
+    </script>
+
+</body>
+</html>
