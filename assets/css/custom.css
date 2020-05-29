@@ -1,4 +1,4 @@
-body {background:#f1f4fb url(../img/body_bg.gif)}
+body {background:#fffff;}
 
 
 
@@ -52,9 +52,12 @@ body {background:#f1f4fb url(../img/body_bg.gif)}
 /* Header  */
 
 #header{
-	background:#a5d5fa center 57px;
+	background: #a5d5fa; center 57px;
 	padding: 10px 0 10px 0px;
+	
 }
+
+
 #header.sub {
 	background:url(../img/header_bg.png) center 7px;
 	padding: 35px 0 55px 0px;
@@ -73,9 +76,10 @@ body {background:#f1f4fb url(../img/body_bg.gif)}
 	display: none;
 }
 #header img {width: 190px; display: block; margin: 0 auto; padding-right: 50px;}
+#header img:hover{transform: rotate(20deg);}
 
 #header h1{
-	color: #fff;
+	color: #ffffff;
 	margin-bottom: 0px;
 	margin-top: 20px;
 	font-weight: 500;
