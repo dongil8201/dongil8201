@@ -1,0 +1,82 @@
+/*reset*/
+*{margin: 0; padding: 0;}
+li {list-style: none;}
+a {font-style: normal; color:#333; }
+.clearfix::before , .clearfix::after {display: block; content: ''; clear: both;}
+
+
+
+
+/*layout*/
+
+#wrap {width: 1000px; margin: 0 auto; }
+.container { }
+#header { background-color:#ffffff; float: left; height: 900px; width: 300px; margin-top: 20px;}
+#content1 {width: 700px; float: left;  margin-top: 20px;}
+#content2 {width: 700px; float: left;}
+#content3 {width: 700px; float: left;}
+#footer{ background-color:#edf2f8; width: 1000px;  float:left;}
+
+
+/*header*/
+#header { }
+#header img {width: 120px; margin: 10px 0 0 30px;}
+#header ul {padding: 20px; font-size: 17px; font-weight: bold;}
+#header ul li{padding: 10px; border-bottom: #ccc 1px solid; }
+
+
+
+
+
+/*content1*/
+#content1 { }
+#content1 a { }
+#content1 img {width: 100%; margin-bottom: 10px;}
+
+/*content2*/
+#content2{}
+#content2 h2 {text-align: center; margin-top: 40px;}
+#content2 h2 em {color: #ccc; font-style: normal; }
+#content2 .cont2 {display: flex; justify-content: space-between; margin-top: 30px; padding: 10px;}
+#content2 ul {}
+#content2 ul li {text-align: center; font-size: 12px; font-weight: bold;}
+#content2 ul li a { }
+#content2 ul li img {display: block; width: 100px; margin-bottom: 20px; }
+
+
+/*content3*/
+#content3{display: flex; justify-content: space-between; background: rgb(245, 245, 245); margin-top: 20px;}
+
+
+#content3 .cont1 { position: relative; width: 30%; border: #ccc solid 1px; background-color: #fff; margin: 10px;}
+#content3 .cont1 h3 { text-align: center; font-size: 18px; margin-top: 20px;}
+#content3 .cont1 a img { position: absolute; top: 0; right: 0; width: 35px;}
+#content3 .cont1 img {position: absolute; right: 45px; top: 50px; width: 100px; padding: 10px;}
+#content3 .cont1 ul {margin-top: 130px; padding: 7px; }
+#content3 .cont1 ul li { font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; line-height: 1.3; margin: 5px 8px 10px 8px; }
+
+
+
+#content3 .cont2 { position: relative; width: 30%; border: #ccc solid 1px; background-color: #fff; margin: 10px;}
+#content3 .cont2 h3 { text-align: center; font-size: 18px; margin-top: 20px;}
+#content3 .cont2 a img { position: absolute; top: 0; right: 0; width: 35px;}
+#content3 .cont2 img {position: absolute; right: 45px; top: 50px; width: 100px; padding: 10px;}
+#content3 .cont2 ul {margin-top: 130px; padding: 7px; }
+#content3 .cont2 ul li { font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; line-height: 1.3; margin: 5px 8px 10px 8px; }
+
+#content3 .cont3 { position: relative; width: 30%; border: #ccc solid 1px; background-color: #fff; margin: 10px;}
+#content3 .cont3 h3 { text-align: center; font-size: 18px; margin-top: 20px;}
+#content3 .cont3 a img { position: absolute; top: 0; right: 0; width: 35px;}
+#content3 .cont3 img {position: absolute; right: 45px; top: 50px; width: 100px; padding: 10px;}
+#content3 .cont3 ul {margin-top: 130px; padding: 7px; }
+#content3 .cont3 ul li { font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; line-height: 1.3; margin: 5px 8px 10px 8px; }
+
+
+/*footer*/
+
+#footer {margin-top: 20px; position: relative; margin-bottom: 20px;}
+#footer img {width: 90px; float: left; margin: 30px;}
+#footer ul {margin-top: 30px; }
+#footer ul li {padding: 10px;  font-weight: bold;}
+#footer a {float: right; }
+#footer a img {width: 220px; position: absolute; top: 40px; right: 30px;  }
