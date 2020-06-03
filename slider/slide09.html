@@ -88,20 +88,28 @@
         right: 0;
     }
 .slider-dot {
-    position: fixed; bottom: 20px; left: 50%;
+    position: absolute; bottom: 20px; left: 50%;
     transform: translate(-50%);
+    white-space: nowrap;
 }
 .slider-dot a{
-    width: 20px; height: 20px;
-    background: rgba(0,0,0,0.6);
+    width: 100px; height: 40px;
+    background: rgba(0,0,0,0.8);
     display: inline-block;
-    border-radius: 50%;
+    border-radius: 3px;
     margin: 5px;
-    text-indent: -9999px;
     transition: background 0.3s;
+    text-align: center;
+    line-height: 40px;
+    font-size: 14px;
+    background-size: cover;
+    opacity: 0.5;
+    transition: all 0.3s;
 }
 .slider-dot a.active{
-    background:rgba(255,255,255,.9);
+    background-size: cover;
+    color: #f00;
+    opacity: 1;
 }
 
 </style>
@@ -109,7 +117,7 @@
 
 <body>
     <div class="info">
-        <h1>Image slide08</h1>
+        <h1>Image slide09</h1>
         <p>좌로 움직이기</p>
         <ul>
             <li>연속적으로 움직이기</li>
@@ -126,8 +134,8 @@
             <li><a href="slide05.html">slide05</a></li>
             <li><a href="slide06.html">slide06</a></li>
             <li><a href="slide07.html">slide07</a></li>
-            <li class="active"><a href="slide08.html">slide08</a></li>
-            <li><a href="slide09.html">slide09</a></li>
+            <li><a href="slide08.html">slide08</a></li>
+            <li class="active"><a href="slide09.html">slide09</a></li>
         </ul>
     </div>
     
@@ -143,11 +151,13 @@
         </div>
     </div>
 
+    <!--
     <div class="slider-btn">
         <a href="#" class="prev">prev</a>
         <a href="#" class="next">next</a>
     </div>
-   
+  -->
+<!--
     <div class="slider-dot">
         <a href="#" class="dot active">1</a>
         <a href="#" class="dot">2</a>
@@ -155,12 +165,142 @@
         <a href="#" class="dot">4</a>
         <a href="#" class="dot">5</a>
     </div>
-   
+   -->
 
     <!--script-->
-
     <script src="js/jquery.min_1.12.4.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+
+    
     <script>
+        //버튼 태그 추가하기
+        //append를 이용해서 버튼을 추가해주기
+
+        $(".slide-warp").append
+        ("<div class='slider-btn'><a href='#' class='prev'>prev</a><a href='#' class='next'>next</a></div>")
+        $(".slide-warp").append
+        ("<div class='slider-dot'></div>")
+
+
+
+        const slideWarp = $(".slide-warp");
+        const slideImg = $(".slide-img");
+        const slide = $(".slides");
+        const slideBtn = $(".slider-btn");
+        const slideDot = $(".slider-dot");
+
+        let sliderCount = slide.length
+        let sliderWidth = slide.width();     //1000
+        let currentIndex = 0;
+        let dotIndex = "";
+        let timer = "";
+
+        //이미지 움직이기
+        function gotoSlide(index){
+            slideImg.animate({left: -sliderWidth*index}, 400, "easeInOutSine");
+            currentIndex = index;
+            //1 = -1000     //-1 = 1000
+            //2 = -2000     //-2 = 2000 
+            //3 = -3000      //-3 = 3000
+            updateDot();
+              
+        }
+
+        //자동플레이
+        function startTimer(){
+            timer = setInterval(function(){
+                let nextIndex  =(currentIndex +1)% sliderCount;    
+                gotoSlide(nextIndex);
+            },3000);
+        }
+        startTimer ();
+        //정지
+        function stopTimer(){
+            clearInterval(timer)
+        }
+
+        //slideWarp.hover(function(){stopTimer()}, function(){startTimer()});
+        slideWarp.on({mouseenter:stopTimer, mouseleave:startTimer})
+
+
+        //버튼 클릭하기
+
+        slideBtn.on("click" , "a" , function(){
+           
+            let nextIndex  =(currentIndex +1)% 5;      //1,2,3,4,5,6
+            let prevIndex = (currentIndex -1) % 5;      //-1,-2,-3,-4
+            if (currentIndex == 0) {
+                prevIndex = sliderCount -1
+            }
+            console.log("nextIndex : " + nextIndex);
+            console.log("prevIndex : " + prevIndex);
+
+            if( $(this).hasClass("prev")){
+                gotoSlide(prevIndex);
+            }else{
+                gotoSlide(nextIndex);
+            }     
+        });
+
+        //닷 버튼 만들기
+
+        slide.each(function(index, element){
+            //console.log(i)
+            //console.log(e)
+            let slideName = $(this).find("img").attr("alt");
+            let slideImg = $(this).find("img").attr("src");
+            console.log(slideImg)
+            //dotIndex += "<a href='#' class='dot'>"+(index+1)+"</a>";    //번호순서대로
+            dotIndex += "<a href='#' style='background-image:url("+slideImg+")'>"+slideName+"</a>";
+            
+            //각 슬라이드 이미지를 가져와서
+            //각 이미지를 각 닷 버튼한테 background-image를 넣어준다.
+            
+        });
+
+            //slide.each(function(index){
+            //console.log(index)
+            //dotIndex += "<a href='' class='dot'>"+slideName+"</a>";
+            //console.log(dotIndex)
+            //});
+
+        slideDot.html(dotIndex);
+        slideDot.find("a").eq(0).addClass("active");
+
+
+
+        //닷 버튼 클릭하기
+
+        slideDot.on("click","a",function(){
+            gotoSlide($(this).index());
+            
+        });
+
+        function updateDot(){
+            slideDot.find("a").removeClass().eq(currentIndex).addClass("active");
+        };
+
+        
+
+
+
+
+
+        /*
+        function gotoSlider(index){
+            console.log("index:" + index);
+
+            slideImg.animate({left:-slideWidth * index +"px"},400)
+            currenIndex = index;
+            updateDot()
+        }
+
+        function updateDot(){
+            sliderDot.find("a").removeClass().eq(currenIndex).addClass("active");
+        }
+        */
+        
+        /*
         const slideWarp =$(".slide-warp");
         const slideImg =$(".slide-img");
         const slides = $(".slides");
@@ -195,7 +335,7 @@
         function updateDot(){
             sliderDot.find("a").removeClass().eq(currenIndex).addClass("active");
         }
-        /*
+
         //숙제
         //버튼을 클릭합니다.
         slideBtn.on("click", "a" function(){
@@ -203,7 +343,7 @@
                 
             }
         });
-        */
+
         //slideBtn.on("click","a", function(){
         //if( $(this).hasClass("prev")){
         //    moveLeft()
@@ -231,47 +371,9 @@
                 gotoSlider(nextIndex);
             }
         });
-
+         */
         //오른쪽 버큰을 클릭하면 currenIndex 1,2,3,4,5 1++ //01234, 01234, 01234
         //왼쪽 버튼을 클릭하면 currenIndex 1--
-
-
-
-
-        
-
-
-        /*
-        slides.css({width:slideWidth, height:slideHeight});
-        slideImg.css({width:slideTotalWidth, height:slideHeight});
-        slideImg.css({"margin-left" : -slideWidth});
-        $(".slides:last-child").prependTo(slideImg);
-
-        function moveLeft(){
-            slideImg.animate({left: +slideWidth},400, function(){
-                $(".slides:last-child").prependTo(slideImg);
-                slideImg.css("left","");
-            })
-        }
-
-        function moveRight(){
-            slideImg.animate({left: -slideWidth},400, function(){
-                $(".slides:first-child").appendTo(slideImg);
-                slideImg.css("left","");
-            })
-        }
-        */
-
-
-       /*버튼 클릭하기
-        slideBtn.find(".prev").click(function(){
-            moveLeft()
-        });
-
-        slideBtn.find(".next").click(function(){
-            moveRight()
-        }); 
-        */
     </script>
 
 </body>

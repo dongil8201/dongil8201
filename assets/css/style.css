@@ -225,7 +225,7 @@
 #contents_tit p a {
 	color:#2c94c4; 
 }
-
+#contents_tit p:hover{transform: translateZ(10px); opacity: .6;} a
 
 
 /* nav_container */

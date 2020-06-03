@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parallax07</title>
+    <title>Parallax08</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
     
@@ -157,7 +157,184 @@
         .title li.active a {
             border-bottom: 1px dashed #fff;
         }
+        
+        /*contents
+        .content-item-desc {
+            opacity: 0;
+            transform: translateY(70px);
+            transition: all 0.44s ease;
+        }
+        .content-item-desc.show{
+            opacity: 1;
+            transform: translateY(0);
+        }
+        */
+        #section1 .content-item-desc span{
+            opacity: 0;
+            transform: translateY(70px);
+            transition: all 0.44s ease;
+        }
+        #section1 .content-item-desc span.show{
+            opacity: 1;
+            transform: translateY(0);
+        }
+        #section2 .content-item-desc span{
+            opacity: 0;
+            transition: all 0.44s ease;
+            display: inline-block;
+        }
+        #section2 .content-item-desc span.show{
+            opacity: 1;
+            animation: flipInY 1s;
+        }
 
+        @keyframes flipInY {
+            from {
+                transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+                animation-timing-function: ease-in;
+                opacity: 0;
+            }
+
+            40% {
+                transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+                animation-timing-function: ease-in;
+            }
+
+            60% {
+                transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+                opacity: 1;
+            }
+
+            80% {
+                transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+            }
+
+            to {
+                transform: perspective(400px);
+            }
+            }
+           
+        #section3 .content-item-desc span{
+            opacity: 0;
+            transition: all 0.44s ease;
+            display: inline-block;
+        }
+        #section3 .content-item-desc span.show{
+            opacity: 1;
+            animation: fadeInDown 1s;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translate3d(0, -100%, 0);
+            }
+
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+            }
+
+            .fadeInDown {
+            animation-name: fadeInDown;
+            }
+
+            #section4 .content-item-desc span{
+            opacity: 0;
+            transition: all 0.44s ease;
+            display: inline-block;
+            }
+            #section4 .content-item-desc span.show{
+                opacity: 1;
+                animation: lightSpeedInLeft 1s;
+            }
+
+                @keyframes lightSpeedInLeft {
+                        from {
+                            transform: translate3d(-100%, 0, 0) skewX(30deg);
+                            opacity: 0;
+                        }
+
+                        60% {
+                            transform: skewX(-20deg);
+                            opacity: 1;
+                        }
+
+                        80% {
+                            transform: skewX(5deg);
+                        }
+
+                        to {
+                            transform: translate3d(0, 0, 0);
+                        }
+                        }
+
+                        .lightSpeedInLeft {
+                        animation-name: lightSpeedInLeft;
+                        animation-timing-function: ease-out;
+                        }
+
+            #section5 .content-item-desc span{
+            opacity: 0;
+            transition: all 0.44s ease;
+            display: inline-block;
+            }
+            #section5 .content-item-desc span.show{
+                opacity: 1;
+                animation: lightSpeedInRight 1s;
+            }
+
+                @keyframes lightSpeedInRight {
+                from {
+                transform: translate3d(100%, 0, 0) skewX(-30deg);
+                opacity: 0;
+                }
+
+                60% {
+                transform: skewX(20deg);
+                opacity: 1;
+                }
+
+                80% {
+                transform: skewX(-5deg);
+                }
+
+                to {
+                transform: translate3d(0, 0, 0);
+                }
+                }
+
+                .lightSpeedInRight {
+                animation-name: lightSpeedInRight;
+                animation-timing-function: ease-out;
+                }
+
+            #section6 .content-item-desc span{
+            opacity: 0;
+            transition: all 0.44s ease;
+            display: inline-block;
+            }
+            #section6 .content-item-desc span.show{
+                opacity: 1;
+                animation: slideInUp 1s;
+            }
+
+              
+                @keyframes slideInUp {
+                        from {
+                            transform: translate3d(0, 100%, 0);
+                            visibility: visible;
+                        }
+
+                        to {
+                            transform: translate3d(0, 0, 0);
+                        }
+                        }
+
+                        .slideInUp {
+                        animation-name: slideInUp;
+                        }
     </style>
 </head>
 <body>
@@ -168,8 +345,8 @@
 
 
     <div class="title">
-        <h1>Parallax07</h1>
-        <p>이질감 효과</p>
+        <h1>Parallax08</h1>
+        <p>text 효과</p>
         <ul>
             <li><a href="parallax01.html">parallax01</a></li>
             <li><a href="parallax02.html">parallax02</a></li>
@@ -177,8 +354,8 @@
             <li><a href="parallax04.html">parallax04</a></li>
             <li><a href="parallax05.html">parallax05</a></li>
             <li><a href="parallax06.html">parallax06</a></li>
-            <li class="active"><a href="parallax07.html">parallax07</a></li>
-            <li><a href="">parallax08</a></li>
+            <li><a href="parallax07.html">parallax07</a></li>
+            <li class="active"><a href="parallax08.html">parallax08</a></li>
         </ul>
     </div>
 
@@ -267,69 +444,91 @@
 
 
     <script>
+       let txt = $("#section1 .content-item-desc").text();
+       let split = txt.split("").join("</span><span aria-hidden='true'>");
+            split ="<span aria-hidden='true'>" +split+"</span>";
+       //content-item-desc에 aria-label 속성을 추가(attr)
+       //속성에 텍스트(txt)를 입력
+       // $("#section1 .content-item-desc").html(split).attr("aria-label",txt)
        
-        /*제이쿼리
-        //제이쿼리
-        let scrollTop = $(window).scrollTop();
+        //한번에
+        $(".content-item-desc").each(function(){
+            //$(split).attr("aria-label",txt)
+            let txt = $(this).text();
+            let split = txt.split("").join("</span><span aria-hidden='true'>");
+                split = "<span aria-hidden='true'>" +split+"</span>";
 
-        function scroll(){
-            let newScrollTop =  $(window).scrollTop();
-            let different = newScrollTop - scrollTop;
-            console.log("scrollTop:" + scrollTop)
-            console.log("newScrollTop:" + newScrollTop)
-            console.log("different: " + different)
+             $(this).html(split).attr("aria-label",txt);      
+        });
+        //자바스크립트 한번에
 
-            $(".content-item-desc").css({"transform":"skewY("+different+"deg)"});
+        //패럴럭스 이팩트
+        $(window).scroll(function(){
+        //     if( $(window).scrollTop() > $("#section1").offset().top){
+        //         $("#section1 .content-item-desc").addClass("show");
+        //     }else{
+        //         $("#section1 .content-item-desc").removeClass("show");
+        //     }
 
-            scrollTop = newScrollTop;
-            requestAnimationFrame(scroll)
-        }
-        scroll()
-        */
-        //javasript
-        let pageYOffset = window.pageYOffset;
 
-        const scroll = () => {
-            const newPageYOffset = window.pageYOffset;
-            const different = newPageYOffset - pageYOffset;
+        // $(".content-item").each(function(){
+        //     if( $(window).scrollTop() > $(this).offset().top){
+        //         $(this).find(".content-item-desc").addClass("show");
+        //     }else
+        //         $(this).find(".content-item-desc").removeClass("show");
+        // });
 
-            //console.log("pageYOffset:" + pageYOffset)
-            //console.log("newPageYOffset:" + newPageYOffset)
-            //console.log("different: " + different);
-
-            //$(".content-item-imgWrap").css({"transform":"skewY("+different+"deg)"});
-
-            let target = document.querySelectorAll(".content-item-imgWrap");
-            
-
-           // target.style.transform="rotate("+different+"deg)";
-
-           //target.forEach(box =>
-           //   box.style.transform="rotate("+different*0.06+"deg)"
-           //);
-            
-            gsap
-            //gsap.to(".content-item-img", { duration: 0.3, ease: Power1.ease, rotation: different });
-            gsap.to(".content-item-img", { duration: 0.3, ease: "Power1.out", rotation: different*0.2 });
-            gsap.to(".content-item-img", { duration: 0.3, ease: "Power2.out", rotation: different*0.3 });
-
-            pageYOffset = newPageYOffset;
-            requestAnimationFrame(scroll);
-        }
-        scroll()
-
-        
-        //일정한 시간 동안 반복적 함수를 진행
-        //setInterval(render,1000);
-        //let num = 0;
-        //function render(){
-        //    $(".content-item-num").text(num);
-        //    num++;
-        //    requestAnimationFrame(render)
-            //setInterval(render,1000);
-        //}
-        //render()
-        
+            if( $(window).scrollTop() >= $("#section1").offset().top){                    //화면에 섹션이 보이기 시작할 때
+                $("#section1 .content-item-desc span").each(function(index){
+                    //console.log(index)
+                    setInterval(function(){
+                        $("#section1 .content-item-desc span").eq(index).addClass("show");
+                    },10*index);
+                });
+                //span 갯수 : length
+                //각 span : delay
+            }
+            if( $(window).scrollTop() >= $("#section2").offset().top){                    //화면에 섹션이 보이기 시작할 때
+                $("#section2 .content-item-desc span").each(function(index){
+                    //console.log(index)
+                    setInterval(function(){
+                        $("#section2 .content-item-desc span").eq(index).addClass("show");
+                    },10*index);
+                });
+            }
+            if( $(window).scrollTop() >= $("#section3").offset().top){                    //화면에 섹션이 보이기 시작할 때
+                $("#section3 .content-item-desc span").each(function(index){
+                    //console.log(index)
+                    setInterval(function(){
+                        $("#section3 .content-item-desc span").eq(index).addClass("show");
+                    },10*index);
+                });
+            }
+            if( $(window).scrollTop() >= $("#section4").offset().top){                    //화면에 섹션이 보이기 시작할 때
+                $("#section4 .content-item-desc span").each(function(index){
+                    //console.log(index)
+                    setInterval(function(){
+                        $("#section4 .content-item-desc span").eq(index).addClass("show");
+                    },10*index);
+                });
+            }
+            if( $(window).scrollTop() >= $("#section5").offset().top){                    //화면에 섹션이 보이기 시작할 때
+                $("#section5 .content-item-desc span").each(function(index){
+                    //console.log(index)
+                    setInterval(function(){
+                        $("#section5 .content-item-desc span").eq(index).addClass("show");
+                    },10*index);
+                });
+            }
+            if( $(window).scrollTop() >= $("#section6").offset().top){                    //화면에 섹션이 보이기 시작할 때
+                $("#section6 .content-item-desc span").each(function(index){
+                    //console.log(index)
+                    setInterval(function(){
+                        $("#section6 .content-item-desc span").eq(index).addClass("show");
+                    },10*index);
+                });
+            }
+        });
 
 </script>
 
