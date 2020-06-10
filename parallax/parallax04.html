@@ -7,7 +7,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" href="../mouse/css/modal.css">
     <style>
        /* reset */
        * {margin: 0; padding: 0; box-sizing: border-box;}
@@ -139,6 +139,28 @@
 
         .contents > section.show {
             opacity: 1; transform: rotateY(0px);
+        }
+
+        /*  info4 */
+        .info4 {position: absolute; left: 0; bottom: 0; z-index: 1000; padding: 20px;}
+        .info4 a {color: #fff; border: 1px solid #fff; border-radius: 30px; padding: 5px 30px}
+        .info4 .modal {
+            background: rgba(0,0,0,0.8);
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            position: fixed;
+            top: 100%;
+            left: 0;
+            text-align: left;
+            transition: all 600ms cubic-bezier(0.86, 0, 0.07, 1);
+        }
+        .info4 .modal.show {
+            top: 0;
+        }
+        .info4 .modal .close {
+            position: absolute; right: 10px; top: 20px;
         }
 
         /*title*/
@@ -276,9 +298,57 @@
         </div>
     </div>
 
+    <!--소스-->
+    <div class="info4">
+        <a href="#" class="view">소스보기</a>
+        <!-- modal -->
+        <div class="modal">
+            <div class="code-editor">   
+                <span class="control"></span>
+                <span class="control"></span>
+                <span class="control"></span>
+<pre class="line-numbers"><code class="language-js"> window.addEventListener("scroll", () => {
+let pageYOffset = (window.pageYOffset || document.documentElement.scrollTop) + screen.height/2;
+console.log("1:" +screen.height/2)
+console.log("2:"+document.documentElement.scrollTop)
+console.log("3:" +window.pageYOffset)
+
+document.querySelector(".pageYOffset").textContent = pageYOffset;
+
+for(let i=1; i<=9; i++){
+    document.querySelector(".s"+i+"OT").textContent = document.getElementById("section"+i).offsetTop;
+}
+for(let i=1; i<=9; i++){
+    if(pageYOffset > document.getElementById("section"+i).offsetTop){
+     document.querySelector(".s"+i+"OT").style.color = "red";
+    }else{
+        document.querySelector(".s"+i+"OT").style.color = "yellow";
+        //  노동한번
+         //  $(".content-item").each(function(){
+         //    if(scrollTop > $(this).offset().top){
+         //         $(this).addClass("show");
+        //      }
+        //    });
+
+                document.querySelectorAll(".content-item").forEach(elem => {
+                    console.log(elem.offsetTop);
+                    if(pageYOffset > elem.offsetTop){
+                       elem.classList.add("show");
+                    }else {
+                        elem.classList.remove("show");
+                    }
+                });
+        });
+</code></pre>
+            </div>
+            <a class="close">Close</a>
+        </div>
+    </div>
+
     <script src="js/jquery.min_1.12.4.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/jquery.min.js"></script>
+    <script src="js/madal.js"></script>
 
     <script>
         //$(window).scroll(function(){});
@@ -448,6 +518,14 @@
                     }
                 });
         });
+
+        //소스보기
+        $(".info4 a").click(function(){
+                    $(".info4 .modal").addClass("show");
+                });
+                $(".info4 .close").click(function(){
+                    $(".info4 .modal").removeClass("show");
+                });
     </script>
 
 

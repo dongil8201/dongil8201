@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Overpass:wght@100;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+
+<body>
+    <div id="warp">
+        <header id="header">
+            <div class="imglogo">
+                <h1><img src="image/logo.PNG" alt="portfolio"></h1>
+                <em>PORT<br>FOLIO</em>
+            </div>
+            <div class="nav">
+                <div class="ham">
+                    <div class="bar">
+                        <span></span>
+                    </div>
+                </div>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Site</a></li>
+                    <li><a href="#">Scirpt</a></li>
+                    <li><a href="#">Work</a></li>
+                </ul>
+            </div>
+            <div class="work">
+                <h3>work</h3>
+            </div>
+            <div class="arrow"><a href="#"><img src="image/arrow.PNG" alt="화살표"></a></div>
+            <h2 class="animate__animated animate__bounce">WEB<br>PUBLISHERS</h2>
+            <p>KIM DONG-IL</p>
+            <strong class="line"></strong> 
+            <div class="well">
+                <div class="box1">
+                    <h4><button class="btn btn1"></button></h4>
+                    <div class="circle circle1"></div>
+                </div>                        
+            </div>
+        </header>
+        <!--//header-->
+
+        <banner id="banner">
+            <div class="bannerwarp">
+                <div class="ban1">
+                    <h3>저는 조금 늦은 <span>WEBPUBLISHERS</span>입니다.</h3>
+                    <strong class="line"></strong> 
+                </div>
+                <div class="ban2">
+                    <ul>
+                        <li>저는 조금은 늦은 웹 퍼블리셔입니다.</li>
+                        <li>언제나 맡은바 최선을 다합니다.</li>
+                        <li>퍼블리셔의 기본기를 열심히 배웠습니다.</li>
+                        <li>남들보다 늦은 시작이지만,</li>
+                        <li>열정만큼은 다른이와 똑같습니다.</li>
+                        <li>항상 발전이 거듭되는 웹퍼블리셔가 목표입니다.</li>
+                    </ul>
+                </div>
+                <div class="ban3">
+                    <p>이력서 바로 보기</p>
+                </div>
+            </div>
+        </banner>
+        <!--//banner-->
+
+        <section>
+            <div class="content1"></div>
+            <div class="content2"></div>
+        </section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <footer></footer>
+    </div>
+    
+<script src="js/jquery.min_1.12.4.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/gsap.min.js"></script>
+
+
+<script>
+
+//햄버거 메뉴
+    $("#header .nav .ham .bar").click(function(){
+        $(this).toggleClass("on")
+        });      
+           
+//마우스오버
+    $(function(){
+            $(".imglogo").on({
+            "mouseover" : function (){
+                $(".imglogo").css({"color" : "#FF285B"});
+            },
+            "mouseout" : function(){
+                $(".imglogo").css({"color" : "none"});
+            }
+          })
+        });
+
+//gsap
+$(".btn1").show(function(){
+            gsap.to(".box1 .circle1", {duration:1, repeat:9999, yoyo:true, left:"40%", rotationY:"0deg" , ease:"power1.out"});
+        });
+        
+//제목 애니메이션
+document.documentElement.style.setProperty('--animate-duration', '2s');
+    
+</script>
+        
+</body>
+</html>

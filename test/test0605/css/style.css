@@ -1,0 +1,71 @@
+/*reset*/
+*{margin: 0; padding: 0;}
+li { list-style: none;  }
+a { font-style: normal; font-family: none; color: #333; text-decoration: none;}
+.clearfix::before , .clearfix::after {content: ''; display: block; clear: both; }
+
+/*layout*/
+#warp{width: 1000px; margin: 0 auto; }
+#header {width: 100%; height: 100px;}
+#banner {}
+#content1 {width: 100%; height: 300px;  }
+#content2 {width: 100%; height: 400px; }
+#footer {width: 100%;}
+
+/*header*/
+#header { }
+#header h2 {float: left; }
+#header img {width: 100px; padding: 20px 0;}
+#header .nav { float: right; }
+#header ul {margin-top: 40px;  display: flex; justify-content: space-between;}
+#header ul li {padding: 13px; position: relative; text-align: center;}
+#header ul li a {font-weight: bold; font-size: 18px; display: block;}
+#header ul li a:hover {background: #ccc;}
+
+#header .nav ul.submanu {display: none; position: absolute; left: 0; top: 10px; z-index: 5;}
+#header .nav ul.submanu li {padding: 0 12px 0 12px; }
+#header .nav ul.submanu li a {padding: 15px; background: #ccc;}
+#header .nav ul.submanu li a:hover {background: #888; }
+
+/*banner*/
+#banner {}
+#banner .slideList {width: 1000px; height: 300px; overflow: hidden;}
+#banner .slideList .slideImg { width: 3000px; height: 300px; overflow: hidden;}
+#banner .slideList .slideImg .slides {float: left; width: 1000px;}
+#banner .slideList .slideImg .slides img {width: 100%;}
+
+
+/*content1*/
+#content1 {margin-top: 20px;   }
+#content1 .cont1 {float: left; width: 48%; margin-right: 2%; position: relative; border: 1px solid #ccc; padding: 5px 0 0 15px;}
+#content1 .cont1 h2 {margin-bottom: 15px; }
+#content1 .cont1 h2 em {font-style: normal; font-family: none; color:#ccc; }
+#content1 .cont1 ul { padding: 5px 0 0 0; line-height: 1.6; margin-bottom: 50px;}
+#content1 .cont1 ul li {float: left;}
+#content1 .cont1 ul span {float: right;}
+#content1 .cont1 a img {width: 20px; position: absolute; top: 5px; right: 0;}
+#content1 .cont1 p {position: absolute; top: 5px; right: 25px;}
+#content1 .cont2 {width: 48%; float: right; margin-right: 0;}
+#content1 .cont2 a img {width:100%;}
+
+
+/*content2*/
+#content2 {}
+#content2 .hea h2 {margin-bottom: 20px;}
+#content2 .cont1 {position: relative;  }
+#content2 .cont1 a img {float: left;  width: 24%; margin-right: 1.25%;}
+#content2 .cont1 p {position: absolute; top: 265px; left: 0;}
+#content2 .cont2 {position: relative; }
+#content2 .cont2 a img {float: left;  width: 24%; margin-right: 1.25%; }
+#content2 .cont2 p {position: absolute; top: 265px; left: 250px;}
+#content2 .cont3 {position: relative; }
+#content2 .cont3 a img {float: left;  width: 24%; margin-right: 1.25%; }
+#content2 .cont3 p {position: absolute; top: 265px; right: 370px;}
+#content2 .cont4 {position: relative;  }
+#content2 .cont4 a img {float: right; width: 24%; }
+#content2 .cont4 p {position: absolute; top: 265px; right: 140px;}
+
+/*footer*/
+#footer {margin-top: 10px; border-top: 1px solid #ccc; }
+#footer address {margin-top: 20px; font-style: normal; color: #ccc; margin-bottom: 20px;}
+#footer p { color: #ccc; margin-bottom: 5px;}

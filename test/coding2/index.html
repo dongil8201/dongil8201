@@ -117,10 +117,10 @@
     <script src="js/jquery.min_1.12.4.js"></script>
     <script>
         $(".nav > ul > li").mouseover(function(){
-            $(".nav > ul > li").find(".submenu").stop().slideDown(200);
+            $(this).find(".submenu").stop().slideDown(200);
         });
         $(".nav > ul > li").mouseout(function(){
-            $(".nav > ul > li").find(".submenu").stop().slideDown(200);
+            $(this).find(".submenu").stop().slideDown(200);
         });
     </script>
 </body>

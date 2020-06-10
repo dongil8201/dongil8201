@@ -1,0 +1,142 @@
+*{margin: 0; padding: 0;}
+li { list-style: none;}
+a { text-decoration: none; font-family: 'Overpass', sans-serif; }
+
+
+/*layout*/
+#warp {width: 100%; }
+#header {width: 100%; height: 1000px;}
+#banner {}
+#section {}
+#section {}
+#section {}
+#footer { }
+
+
+/*header*/
+#header {position: relative; }
+#header h1 { }
+#header h1 img {float: left; position: absolute; top: 30px; left: 40px;}
+
+/*오버1*/
+#header .imglogo  {}
+#header .imglogo h1 {}
+#header .imglogo em {
+    visibility: hidden;
+    padding: 20px 8px 20px 8px;
+    position: absolute; left: 42px; top: 32px;
+    background: rgba(56,28,117,1); color: #fff;
+    line-height: 1;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 20px;
+}
+#header .imglogo:hover em{visibility: visible; color:#fff; }
+
+/*nav*/
+#header .nav {
+    float: right; display: inline; 
+}
+#header .nav ul { 
+    display: flex; justify-content: space-between; 
+    margin-top: 100px; margin-right: 200px;
+}
+#header .nav ul li {}
+#header .nav ul li a {
+    color: #381C75; padding: 30px; 
+    font-size: 18px; font-weight: lighter;  
+}
+#header .nav .ham {
+     flex: 1 1 0; position: relative;   
+}       
+#header .nav .ham .bar {
+    position: absolute; 
+    right: 100px; top: 110px; 
+    transform: translateY(-50%); 
+    width: 50px; height: 50px; 
+    cursor: pointer;}       
+#header .nav .ham .bar span{
+    width: 30px; height: 1px;
+    background: #FF285B;
+    position: relative;
+    display: block;
+    transition: all 0.5s ease;
+    margin-top: 25px;
+    margin-left: 10px; }       
+#header .nav .ham .bar span::before {
+    content: '';
+    width: 100%; height: 1px;
+    background: #FF285B;
+    position: absolute;
+    right: 0; top: -11px;
+    transform-origin: left;
+    transition: all 0.5s ease;
+}       
+#header .nav .ham .bar span::after {
+    content: '';
+    width: 100%; height: 1px;
+    background: #FF285B;
+    position: absolute;
+    right: 0; bottom: -11px;
+    transform-origin: right;
+    transition: all 0.5s ease;
+}       
+#header .nav .ham .bar.on span {transform: rotate(360deg);}
+#header .nav .ham .bar.on span::before {top: -10px; transform: translateX(15%) rotate(45deg);}
+#header .nav .ham .bar.on span::after {bottom:-10px; transform: translateX(-85%) rotate(135deg);}
+
+/*header main*/
+#header h2 {
+    font-size: 120px; position: absolute; top: 260px; left: 130px; 
+    line-height: 0.9; color: #381C75;
+}
+#header p {
+    font-size: 100px; 
+    position: absolute; top: 500px; left: 130px; 
+    color: #FF285B;}
+#header .work { 
+    position: absolute; top: 600px; right: 100px;
+}
+#header .work h3 {
+    transform: rotate(90deg); font-size: 15px; 
+    color: #ccc; 
+}
+#header .arrow img { 
+    width: 20px;  position: absolute; top: 650px; right: 110px; 
+    color:#ccc;
+}
+#header .line { }
+#header .line::before {
+    content: ''; width: 90px; height: 20px; position: absolute; left: 20px; top: 567px; 
+    background: #FF285B;
+}
+#header .circle{
+    width: 10px; height: 90px;
+    background:#FF285B; 
+    margin-bottom: 10px;
+    position: absolute;
+    top: 530px; left: 0px;
+    text-align: center;
+    line-height: 60px; 
+}
+
+/*banner*/
+#banner {width: 100%; height: 1000px; }
+#banner .bannerwarp {width: 100%; height: 1000px; background-color: #F3F3F3; position: relative;}
+#banner .ban1 { }
+#banner .ban1 h3 {
+    font-size: 60px;
+    color: #FF285B;
+    position: absolute;
+    top: 150px; left: 200px;
+    
+ }
+#banner .ban1 .line { }
+#banner .ban1 .line::before{ 
+    content: ''; width: 150px; height: 20px; 
+    position: absolute; left: 40px; top: 190px; 
+    background: #FF285B; }
+#banner .ban2 ul { }
+#banner .ban2 ul li { }
+#banner .ban3 { }
+#banner .ban3 p { }

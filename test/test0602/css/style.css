@@ -7,24 +7,30 @@ li{ list-style: none;}
 
 /*layout*/
 #warp {width: 1000px; margin: 0 auto; height: 1000px;  }
-#header {background: #666; height: 80px;}
+#header { height: 80px; }
 #banner { }
-#content1 { }
-#content2 { }
-#footer { }
+#footer {width: 1200px; margin: 0 auto; }
 
 
 /*header*/
 #header h1 {float: left; padding: 10px 0; }
-#header img {height: 50px; }
-#header .nav {float: right; display: inline; }
-#header ul li {float: left; position: relative; width: 140px; text-align: center;}
-#header ul li a {font-size: 20px; font-weight: bold; display: block; padding: 22px; }
-#header .nav li .submenu {display: none; position: absolute; top: 75px; right: 0; }
-#header .nav li .submenu li a {padding: 10px; background: #888; }
+#header img {width: 110px; }
+#header .nav {float: right; background:#ddd;}
+#header .nav li {float: left; position: relative; width: 140px; text-align: center;}
+#header .nav li a {font-size: 20px; font-weight: bold; display: block; padding: 22px; }
+#header .nav li a:hover{background: #ccc;}
+#header .nav li ul.submenu {display: none; position: absolute; left: 0; top: 67px; z-index: 100;}
+#header .nav li ul.submenu li a {padding: 10px; background: #888; }
+#header .nav li ul.submenu li a:hover{background: #666;}
 
 /*banner*/
-#banner img {width: 100%;}
+#banner {height: 389px; overflow: hidden;}
+#banner img {width: 100%; display: block;}
+.slideList {height: 389px; width: 1000px; position: relative; z-index: 50;}
+.slideList .slideImg {position: relative; }
+.slideList .slideImg h2 {position: absolute; left: 50%;top: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,0.4); padding: 10px 30px; border-radius: 20px;}
+
+
 
 /*content1*/
 #content1 {margin-top: 20px; }
@@ -47,3 +53,22 @@ li{ list-style: none;}
     padding-left: 25px;
  }   
  #content1 .right em {font-style: normal; font-size: 13px; color: #999; padding-left: 10px;}
+
+ /*content2*/
+ #content2 {margin-top: 20px; margin-bottom: 30px;}
+ #content2 h2 {font-size: 24px; padding-bottom: 10px;}
+ #content2 .best figure {float: left; width: 32%; margin-right: 2%;}
+ #content2 .best figure:last-child {margin-right: 0;}
+ #content2 .best figure img {width: 100%; }
+ #content2 .best figure figcaption { }
+
+ /*footer*/
+ #footer { background: #202020; padding: 50px; margin-top: 50px; }
+ #footer h2 {float: left; }
+ #footer h2 img {width: 150px;}
+ #footer .foot {}
+ #footer .foot h2 {}
+ #footer .foot ul { float: right;  }
+ #footer .foot ul li {display: inline; }
+ #footer .foot ul li a { color: #fff; padding: 10px 30px; }
+ #footer .foot address {float: right; padding: 30px 0px; font-style: normal; color: #ccc; line-height: 2;}
