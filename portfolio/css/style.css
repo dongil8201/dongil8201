@@ -128,15 +128,51 @@ a { text-decoration: none; font-family: 'Overpass', sans-serif; }
     font-size: 60px;
     color: #FF285B;
     position: absolute;
-    top: 150px; left: 200px;
+    top: 250px; left: 300px;
     
  }
 #banner .ban1 .line { }
 #banner .ban1 .line::before{ 
-    content: ''; width: 150px; height: 20px; 
-    position: absolute; left: 40px; top: 190px; 
+    content: ''; width: 150px; height: 5px; 
+    position: absolute; left: 140px; top: 295px; 
     background: #FF285B; }
-#banner .ban2 ul { }
-#banner .ban2 ul li { }
-#banner .ban3 { }
-#banner .ban3 p { }
+#banner .ban2 ul {
+     position: absolute; left: 300px; top: 390px;
+    line-height: 1.8;
+    }
+#banner .ban2 ul li {font-size: 40px; color: #381C75;}
+#banner .ban3 {position: relative; }
+#banner .ban3 h3 { 
+    font-size: 30px;
+    position: absolute;
+    top: 850px; left: 300px;
+    color: #381C75;    
+}
+#banner .ban3 p {
+    position: relative;
+    width: 100px;
+    height: 80px;
+    padding-top: 10px;
+    margin: 20px 0;
+    background:#FF285B; 
+    border-radius: 50% / 10%;
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    text-indent: .1em;
+    position: absolute;
+    left: 300px; top: 850px;
+}
+
+#banner .ban3 p::before{
+    content: '';
+    position: absolute;
+    top: 30%;
+    bottom: 30%;
+    right: -5%;
+    left: -5%;
+    border-radius: 5% / 50%;
+}
+
+
+

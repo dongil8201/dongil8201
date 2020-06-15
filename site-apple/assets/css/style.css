@@ -1,0 +1,15 @@
+/*container*/
+.container {max-width: 1000px; margin: 0 auto;}
+
+/*row*/
+.row{position: relative; margin: 0 20px;}
+
+/*layout*/
+#header .container{ background: #ccc;}
+
+
+/*banner*/
+.banner { }
+.banner .banner-title{ }
+.banner .banner-title{ }
+.banner { }
