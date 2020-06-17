@@ -14,7 +14,7 @@ a { text-decoration: none; font-family: 'Overpass', sans-serif; }
 
 
 /*header*/
-#header {position: relative; }
+#header {position: relative; background-color: #fff;}
 #header h1 { }
 #header h1 img {float: left; position: absolute; top: 30px; left: 40px;}
 
@@ -174,5 +174,170 @@ a { text-decoration: none; font-family: 'Overpass', sans-serif; }
     border-radius: 5% / 50%;
 }
 
+/*contents1*/
+#contents1 {
+    display: flex; margin-top: 80px; 
+    position: relative;
+}
+
+#contents1 .cont1{margin-top: 0; margin-left: 22%;}
+#contents1 .cont1 h3 {
+    font-size: 60px; text-align: center; 
+    margin-bottom: 10px; 
+    color: #381C75;
+}
+#contents1 .cont1 .box1 {
+    border: 3px solid #381C75;
+    width: 500px; height: 500px; 
+    position: relative;
+}
+#contents1 .cont1 .box1 img{width: 500px; height: 500px; }
+#contents1 .cont1 .box1:hover::before { opacity: 0;}
+#contents1 .cont1 .box1::before {
+    content: '';
+    width: 100%; height: 100%;
+    background: rgba(56,28,117,0.8);
+    position: absolute; left: 0; top: 0;
+}
+#contents1 .cont1.show h3{
+    animation-name: fadeInLeftBig;
+    animation-fill-mode: both;
+}
+#contents1 {}
+#contents1 .cont2{position: absolute; top: 300px; left: 960px; }
+#contents1 .cont2 h3 { font-size: 60px; text-align: center;  margin-bottom: 10px; color: #381C75;}
+#contents1 .cont2 .box2 {
+    border: 3px solid #381C75;
+    width: 500px; height: 500px;
+    position: relative;
+ }
+#contents1 .cont2 .box2 a { }
+#contents1 .cont2 .box2 img{width: 500px; height: 500px;}
+#contents1 .cont2 .box2:hover::before { opacity: 0;}
+#contents1 .cont2 .box2::before {
+    content: '';
+    width: 100%; height: 100%;
+    background: rgba(56,28,117,0.8);
+    position: absolute; left: 0; top: 0;
+}
+#contents1 .cont2.show h3{
+    animation-name: fadeInRightBig;
+    animation-delay: 3s;
+}
+
+@keyframes fadeInLeftBig {
+    from {
+      opacity: 0;
+      transform: translate3d(-2000px, 0, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  .fadeInLeftBig {
+    animation-name: fadeInLeftBig;
+  }
+
+@keyframes fadeInRightBig {
+    from {
+      opacity: 0;
+      transform: translate3d(2000px, 0, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  .fadeInRightBig {
+    animation-name: fadeInRightBig;
+  }
 
 
+  /*contents2*/
+
+#contents2 {
+    display: flex; margin-top: 00px; 
+    position: relative;
+}
+
+#contents2 .cont1{
+    margin-top: 0; 
+    margin-left: 22%;
+    position: absolute;
+    top: 600px; left: 0px;
+}
+#contents2 .cont1 h3 {
+    font-size: 60px; text-align: center; 
+    margin-bottom: 10px; 
+    color: #381C75;
+}
+#contents2 .cont1 .box1 {
+    border: 3px solid #381C75;
+    width: 500px; height: 500px; 
+    position: relative;
+}
+#contents2 .cont1 .box1 img{width: 500px; height: 500px; }
+#contents2 .cont1 .box1:hover::before { opacity: 0;}
+#contents2 .cont1 .box1::before {
+    content: '';
+    width: 100%; height: 100%;
+    background: rgba(56,28,117,0.8);
+    position: absolute; left: 0; top:00px;
+}
+#contents2 .cont1.show h3{
+    animation-name: fadeInLeftBig;
+    animation-fill-mode: both;
+}
+#contents2 {margin-top: 100px;}
+#contents2 .cont2{position: absolute; top: 400px; left: 960px; }
+#contents2 .cont2 h3 { font-size: 60px; text-align: center;  margin-bottom: 10px; color: #381C75;}
+#contents2 .cont2 .box2 {
+    border: 3px solid rgb(56, 28, 117);
+    width: 500px; height: 500px;
+    position: relative;
+    opacity: 100;
+ }
+#contents2 .cont2 .box2 a { }
+#contents2 .cont2 .box2 img{width: 500px; height: 500px;}
+#contents2 .cont2 .box2:hover::before { opacity: 0;}
+#contents2 .cont2 .box2::before {
+    content: '';
+    width: 100%; height: 100%;
+    background: rgba(56,28,117,0.8);
+    position: absolute; left: 0; top: 0;
+}
+#contents1 .cont2.show h3{
+    animation-name: fadeInRightBig;
+    animation-delay: 3s;
+}
+
+@keyframes fadeInLeftBig {
+    from {
+      opacity: 0;
+      transform: translate3d(-2000px, 0, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  .fadeInLeftBig {
+    animation-name: fadeInLeftBig;
+  }
+
+@keyframes fadeInRightBig {
+    from {
+      opacity: 0;
+      transform: translate3d(2000px, 0, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  .fadeInRightBig {
+    animation-name: fadeInRightBig;
+  }

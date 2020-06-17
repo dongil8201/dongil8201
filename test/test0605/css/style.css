@@ -29,11 +29,10 @@ a { font-style: normal; font-family: none; color: #333; text-decoration: none;}
 
 /*banner*/
 #banner {}
-#banner .slideList {width: 1000px; height: 300px; overflow: hidden;}
-#banner .slideList .slideImg { width: 3000px; height: 300px; overflow: hidden;}
-#banner .slideList .slideImg .slides {float: left; width: 1000px;}
-#banner .slideList .slideImg .slides img {width: 100%;}
-
+#banner .slide-warp {width: 1000px; height: 370px; overflow: hidden; }
+#banner .slide-img {width: 3000px; height: 370px; display: flex; }
+#banner .slide-img .slides {width: 3000px; }
+#banner .slide-img .slides img {width: 100%; }
 
 /*content1*/
 #content1 {margin-top: 20px;   }

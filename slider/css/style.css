@@ -1,0 +1,30 @@
+*{margin: 0; padding: 0;}
+a{text-decoration: none; color: white;}
+img {width: 100%; vertical-align: top;}
+li {list-style: none;}
+
+#nav{ 
+    position: fixed;
+    left: 0; top: 0;
+    width: 100%; background: #fff;
+    display: flex; justify-content: space-between;
+    padding: 0.7vw;
+}
+#nav .menu{
+    flex: 1 1 0;
+}
+#nav .menu li {
+    display: inline-block;
+    margin: 2.3vw 1vw 2.5vw 0;
+}
+#nav menu li.active a {font-weight: bold; }
+#nav menu a {color: #000; font-size: 14px;}
+
+#nav h1{
+    flex: 1 1 0;
+    font-weight: 700; letter-spacing: 10px;
+    font-size: 14px; 
+    text-transform: uppercase;
+    text-align: center;
+    margin: 2.4vw 1vw;
+}

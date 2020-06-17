@@ -99,6 +99,7 @@
         .textWrap .line .right { width: 50vw; transform: skew(0deg, 15deg); overflow: hidden;}
         .textWrap .line .right .spanWrap {width: 100vw; text-align: center; transform: translate(-50vw);}
         .textWrap .line .right .spanWrap span{font-size: 6vw; }
+        .textWrap span {display: inline-block;}
         
         /* move-image */
         .move-image {}      
@@ -216,20 +217,34 @@
     <script src="js/madal.js"></script>
     <script>
         
-        const spanSlow =document.querySelector("spanSlow")
-        const spanFast =document.querySelector("spanFast")
+        const spanSlow =document.querySelectorAll(".spanSlow");
+        const spanFast =document.querySelectorAll(".spanFast");
 
         window.addEventListener("mousemove",mouseMove);
 
         function mouseMove(e){
 
-            let speedSlow = e.pageX;
-
+            let postion = (e.pageX / (window.innerWidth/2))*100;
             spanSlow.forEach((span)=>{
-                span.style.transform = `translate(${speedSlow}px)`;
+                span.style.transform = `translate(${postion}px)`;
+            });
+            spanFast.forEach((span)=>{
+                span.style.transform = `translate(${-postion}px)`;
             });
         }
-        
+   
+    let spanSlow = $(".spanSlow");
+    let spanFast = $(".spanFast")    
+
+    $(window).on("mousemove" , mouseMove);
+
+    function mouseMove(e){
+        let postion = (e.pageX - ($(window).width()/2))*0.1;
+        console.log(postion)
+
+        spanSlow.css({"transform": "translate("+postion+"px"});
+        spanFast.css({"transform": "translate("+postion+"px"});
+    }
 
     </script>
 </body>
