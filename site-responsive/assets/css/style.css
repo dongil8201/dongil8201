@@ -15,7 +15,7 @@ body {background: url(../img/header_bg.jpg) repeat-x center top;}
 }
 #cont-right {
     position: absolute; right: 0; top: 0; 
-    width: 250px;
+    width: 250px; 
 }
 #footer {border-top: 1px solid #dbdbdb;}
 
@@ -250,7 +250,7 @@ font-size: 18px;}
     background: #2b91c8; color: #fff;
     border: 0; border-radius: 3px;
     cursor: pointer;
-}
+} 
 
 /*  라이트 박스 */
 /* .lightbox img {float: left; width: 19%; margin: 0.5%;} */

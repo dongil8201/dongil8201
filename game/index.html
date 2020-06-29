@@ -21,7 +21,7 @@
             width: 100%;
             max-width: 900px;
             margin: 10% auto;
-            
+            margin-top: 0;
         }
 
         .card {
@@ -134,23 +134,44 @@
             background: url(img/img9.jpg);
             background-size: cover;
         }
-
-        /*info*/
-        .info{
-            position: relative;
+/* info */
+.info {
             width: 100%;
             max-width: 950px;
+            margin: auto;
+            text-align: center;
+            color: #fff;
+            font-family: 'MaplestoryOTFLight';
+            padding-top: 5vh;
         }
-        .score{
+
+        .score {
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #ffffff;  
+            color: #fff;
+            background: rgba(26, 26, 26, 0.8);
+            font-size: 2vw;
+
+        }
+
+        .score span {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .turns span.last-turn {
+            color: red;
+        }
+
+        .text {
+            font-size: 5vw
         }
 
         .btn-sound {
             position: absolute;
-            top: 220px; left: 200px;
+            right: 10px;
+            top: 10px;
             width: 24px;
             height: 24px;
             background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/225363/icon-sound-on.svg);
@@ -174,26 +195,64 @@
             height: 2px;
             background-color: #fff;
             transform: rotate(35deg);
-            box-shadow: 0 0 0 2px #000;
+            box-shadow: 0 0 0 2px #1a1a1a;
         }
 
         .btn-sound.is-playing::before {
             display: none;
         }
 
-     .score .turns {padding-right: 40px; font-size: 30px; position: absolute; top: 300px; left: 200px;}
-     .turns span.last-trun{color: red;}
-     .score .attempt {padding-right: 40px; font-size: 30px; position: absolute; top: 400px; left: 200px;}
-     .score .wins {padding-right: 40px;font-size: 30px; position: absolute; top: 500px; left: 200px;}
+        .success {
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 10000;
+            width: 100%;
+            height: 100vh;
+            text-align: center;
+            background-color: rgba(31, 201, 251, 0.96);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: 'MaplestoryOTFLight';
+            display: none;
+        }
 
-     .text
-     {
-         font-size: 60px; 
-         color: #ffffff;
-         float: left;
-        padding-left: 200px;
-        margin-top: 20px;
-    }
+        .success.is-visible {
+            display: flex;
+        }
+
+        .success h2 {
+            font-size: 3vw;
+            color: #fff;
+        }
+
+        .success .bg {
+            margin: 20px;
+            background: transparent;
+        }
+       .score .turns{color: greenyellow;}
+       .score .attempt{color: blueviolet;}
+       .score .wins{color: red;}
+
+        .success .btn-continue {
+            padding: 10px 45px;
+            font-size: 20px;
+            color: #fff;
+            background-color: #c9531d;
+            font-family: 'MaplestoryOTFLight';
+            margin: 20px;
+            border: 0;
+            outline: 0;
+        }
+
+        .success .btn-continue:active {
+            transform: translateY(4px);
+            background-color: #923c14;
+        }
+
+        
     </style>
 </head>
 
@@ -287,6 +346,18 @@
         </div>
     </main>
 
+    <div class="success bg">
+        <h2 class="success-message">생각보다 똑똑하네!!</h2>
+        <div class="score">
+            <div class="turns">기회:<span>2</span></div>
+            <div class="attempt">시도:<span>0</span></div>
+            <div class="wins">우승:<span>0</span></div>
+        </div>
+        <button class="btn-continue">또 할려면 클릭해!!</button>
+    </div>
+
+
+
     <script src="js/jquery.min_1.12.4.js"></script>
     <script>
         const $board = $('main'),
@@ -294,13 +365,19 @@
                 $btnSound = $('.btn-sound'),
                 $themeSongEl = $('#theme-song')[0],
                 $turns = $('.turns span'),
+                $attempts = $('.attempt span'),
+                $wins =$('.wins span'),
+                $success = $('.success'),
+                $btnContinue = $('btn-continue'),
+                $successMsg = $('.success-message'),
 
-        selectedClass = 'is-selected',       //카드를 선택했을 때
-        dataMatch = 'data-Matched',
-        dataType ='data-type',
-        playSoundClass = 'is-playing',
-        lastTrunClass = 'last-trun',
-        timeoutLenght = 900;
+                selectedClass = 'is-selected',       //카드를 선택했을 때
+                dataMatch = 'data-Matched',
+                dataType ='data-type',
+                playSoundClass = 'is-playing',
+                visibleClass = 'is-visible',
+                lastTrunClass = 'last-trun',
+                timeoutLenght = 900;
         
 
         let sound=[
@@ -312,8 +389,13 @@
         soundMatch = new Audio(sound[0]),
         soundNoMatch = new Audio(sound[1]),
         soundSuccess = new Audio(sound[2]),
+        attemptCount=0, //
         trunsCount = 2,  
+        winCount=0,
         card1, card2; //기회 횟수2
+
+        //카드 셔플
+        shuffleCards();
 
         //음악 아이콘을 클릭했을 때 음악이 나오고 또 클릭했을 떄 정지
         $btnSound.on('click', function(){
@@ -336,7 +418,7 @@
             
         let selectedCards = $('.'+selectedClass);              //선택된 카드를 클래스로 변경 //. is-seleted
 
-        //만약에 똑같다면
+        //만약에 카드가 똑같다면
         if(selectedCards.length ==2){
             card1 = selectedCards.eq(0).attr(dataType);
             card2 = selectedCards.eq(1).attr(dataType);
@@ -367,17 +449,93 @@
                         //카운트 기회가 없을 때(시도+1) , 카운트 ->2
                         if(trunsCount <=0){
                             setTimeout(function(){
-                                trunsCount =2;      //기회를 2번 복구
+                                trunsCount =2;      //기회를 4번 복구
                                 $turns.removeClass(lastTrunClass).html(trunsCount);     //주의 표시 삭제, 카운트 표시
-                                $card.attr(dataMatch, false)
-                            });
+                                $card.attr(dataMatch, false) //
+                                attemptCount += 1;
+                                $attempts.html(attemptCount);
+                            },timeoutLenght);
                         }
                       }
                     }
+                    //완성했을 때
+                    //dataMatch가 true이면서 갯수가 전체 카드 갯수랑 같을 때
+                     if($('[' + dataMatch + '= "true"]').length == $card.length) {
+                         
+                         $success.addClass(visibleClass);
+                         winCount +=1;
+                         $wins.html(winCount);
+                    };
+
+                    //시도 횟수에 따른 메세지
+                    switch(true){
+                        case(attemptCount <=2):
+                        msg = "이거 아주 잘하네~"
+                        break;
+                        case(attemptCount >2 && attemptCount <=5):
+                        msg = "적당히 하네!"
+                        break;
+                        case(attemptCount >5 && attemptCount <=8):
+                        msg = "잘 찍은거지? 우연이지?"
+                        break;
+                        case(attemptCount >8):
+                        msg = "생각은 하고 클릭하는거지?"
+                        break;
+                    }
+                  $successMsg.text(msg);
+                
+                    //다시 게임할 때
+                    $btnContinue.on('click' ,function(){
+                        $success.removeClass(visibleClass)
+                        shuffleCards();
+                        trunsCount = 2;
+                        $truns.html(trunsCount)
+                        attemptCount = 0;
+                        attempts.html(attemptCount)
+                    });
                 });
-   
+                //카드셔플
+            function shuffleCards(){
+                let cards = $board.children();
+                    while(cards.length){
+                        $board.append(cards.splice( Math.floor(Math.random()*cards.length),1) [0])
+                    }
+                    $card.each(function(index){
+                        setTimeout(()=>{
+                            $(this).addClass(selectedClass);
+                        },timeoutLenght+100*index);
+                    });
+                    setTimeout(() => {
+                $card.removeClass(selectedClass);
+            }, 5000);
+            }
+
+
     </script>
+    
 </body>
 </html>
 
 
+//splice(쪼개다)
+// var number = [1,2,3,4,5,6,7]
+
+// var removed = number.splice(2,0,'10','11');
+// alert(number)    //1,2,10,11,3,4,5,6,7
+// var removed = number.splice(3,1);
+// alert(number)      //1,2,3,5,6,7
+
+// var removed = number.splice(2,1,'20');
+// alert(number)       //1,2,20,4,5,6,7
+
+//  var removed = number.splice(0,2,'20','30','40');
+// alert(number)         //20,30,40,3,4,5,6,7
+
+// var removed = number.splice(number.length-3, 2);
+// alert(number)         //1,2,3,4,7
+
+// var removed = number.splice(-2,1);
+// alert(number)         //123457
+
+// var removed = number.splice(2);
+// alert(number)         //1,2

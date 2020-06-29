@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="../parallax/js/jquery.min_1.12.4.js"></script>
+    <script>
+    //   var rightId = "korea";
+    //   var rightPw = "1234"
+    //   function login(id, pw){
+    //       if(id==rightId){
+    //           if(pw==rightPw){
+    //               document.write(id+"님 방문을 환영합니다.");
+    //           }else{
+    //               alert("잘못된 비밀번호입니다.")
+    //           }
+    //       }else{
+    //           alert("존재하지 않는 아이디입니다.");
+    //       }
+    //   }
+
+    //   var userId = prompt("아이디를 입력하세요","")
+    //   var userPw = prompt("패스워드를 입력하세요","")
+
+    //   login(userId, userPw);
+    
+       
+    </script>
+
+
+
+
+
+
+
+
+<!-- <div class="hyunju__titBox">
+    <h1 class="hyunju__mLogo">
+        <img src="/images/my_logo_m.png" alt="" style="display: inline-block; width: 90px; opacity: 1;">
+    </h1>
+    <h3 class="hyunju__desc" style="opacity: 1;">
+        <span>UI/UX</span>
+        <span> &amp; </span>
+        <span>Publishing</span>
+        <span> Developer</span>
+    </h3>
+    <h2 class="hyunju__title" style="opacity: 1;">
+        <span class="name">Hello,</span>
+        <span class="name">Hyun</span>
+        <span class="name">Ju</span>
+        <span class="name">Wolrd \n</span>
+    </h2>
+    <h3 class="hyunju__addTxt" style="opacity: 1;">Welcome to My Home !</h3>
+</div>
+
+
+
+
+<script type="text/javascript">
+    $(function () {
+        //개발자도구 Console 메시지
+        console.log('%c Welcome to %c Hyun Ju World ! ', 'background-color:#000000; color:#ffffff; font-size:23px;',
+            'background-color:red; color:#ffffff; font-size:23px;');
+
+        var $window = $(window);
+        var $sec = $('.secTop');
+        var sec0Pos = $('#sec0').offset().top - 100;
+        var sec1Pos = $('#sec1').offset().top - 100;
+        var sec2Pos = $('#sec2').offset().top - 100;
+        var sec3Pos = $('#sec3').offset().top - 300;
+        var $gnb = $('.hyunju__Mgnb');
+        var $active = $gnb.find('a');
+
+        //페이지 position에 따라 메뉴에 active되는 기능
+        var move = function () {
+            var nowScroll = $window.scrollTop();
+
+            if (nowScroll >= sec0Pos && nowScroll < sec1Pos) {
+                $active.removeClass('on');
+                $active.eq(0).addClass('on')
+            }
+            else if (nowScroll >= sec1Pos && nowScroll < sec2Pos) {
+                $active.removeClass('on');
+                $active.eq(1).addClass('on')
+            }
+            else if (nowScroll >= sec2Pos && nowScroll < sec3Pos) {
+                $active.removeClass('on');
+                $active.eq(2).addClass('on')
+            }
+            else if (nowScroll >= sec3Pos) {
+                $active.removeClass('on');
+                $active.eq(3).addClass('on')
+            }
+        };
+        $(window).scroll(move);
+        //this 클릭하면 그 자리로 가게 해주는 기능
+        var menu = function () {
+            var index = $(this).index();
+            var pos = $sec.eq(index).position().top;
+            $('html, body').animate({
+                scrollTop:pos
+            })
+        };
+        $active.click(menu);
+
+        // main부분에 하나 둘 씩 스르르 나타나게 하는 기능
+        var $mainLogo = $('.hyunju__mLogo img');
+        var $mainStit = $('.hyunju__desc');
+        var $mainBtit = $('.hyunju__title');
+        var $mainXstit = $('.hyunju__addTxt');
+
+        $mainLogo.animate({width:90, opacity:1},400);
+
+        $mainStit.delay(1000).animate({opacity:1},1000,function () {
+            $mainBtit.animate({opacity:1},1000, function () {
+                $mainXstit.animate({opacity:1},500)
+            });
+        });
+
+
+        /*Work 부분 더보기 버튼 누르면 포트폴리오가 더 펼쳐지는 기능*/
+        $(".-close").hide();
+
+        $(".moreBtn").on("click",function(){
+            $(".item").slideDown('slow', function () {
+                $(".item").css("display","inline-block")
+            });
+            $(".moreBtn").hide();
+        });
+
+        /*좌측에 구름 아이콘 누르면 맨 위로 올라가는 동작*/
+        var $up = $('.up');
+
+        var top = function(){
+
+            var topbtn = $up.parent().position().top;
+
+            $('html,body').animate({
+                scrollTop : topbtn
+            })
+        };
+        $up.click(top);
+
+        /*스크롤을 내리면 work에 있는 이미지가 하나둘씩 나타나는 동작*/
+
+        AOS.init();
+
+        new WOW().init();
+    }); -->
+</script>
+
+<div class="hyunju__skill secTop" id="sec3">
+    <div class="hyunju__wrap">
+        <div class="titBox wow pulse" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: pulse;">
+            <p class="titBox__desc">Abilities &amp; Experience</p>
+            <p class="titBox__title">Skill</p>
+        </div>
+
+        <div class="hyunju__skills">
+            <div class="hyunju__skill--list aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="bottom-bottom">
+                <img src="/images/logo_skill01.png" alt="html">
+                <dl class="hyunju__skillList">
+                    <dt class="hyunju__skillTit">HTML</dt>
+                    <dd>Mark up/HTML5</dd>
+                    <dd>크로스 브라우징</dd>
+                    <dd>웹표준 및 접근성 고려</dd>
+                </dl>
+            </div>
+
+            <div class="hyunju__skill--list aos-init aos-animate" data-aos="fade-up" data-aos-duration="2000" data-aos-anchor-placement="bottom-bottom">
+                <img src="/images/logo_skill02.png" alt="css">
+                <dl class="hyunju__skillList">
+                    <dt class="hyunju__skillTit">CSS</dt>
+                    <dd>SCSS, CSS로 컴파일</dd>
+                    <dd>BEM 방법론</dd>
+                    <dd>Animation &amp; transition</dd>
+                    <dd>반응형 미디어 쿼리 가능</dd>
+                </dl>
+            </div>
+
+            <div class="hyunju__skill--list aos-init aos-animate" data-aos="fade-up" data-aos-duration="3000" data-aos-anchor-placement="bottom-bottom">
+                <img src="/images/logo_skill03.png" alt="js">
+                <dl class="hyunju__skillList">
+                    <dt class="hyunju__skillTit">JS</dt>
+                    <dd>자바스크립트 &amp; JQuery</dd>
+                    <dd>Node.js 설치 및 Gulp 사용</dd>
+                    <dd>JS 라이브러리 및 플러그인</dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="hyunju__skills -mt20">
+            <dl class="hyunju__skillList">
+                <dt class="hyunju__skillTit -ex">More</dt>
+                <dd class="hyunju__skillTxt">Git으로 프로젝트 관리 가능 (github / gitlab)</dd>
+                <dd class="hyunju__skillTxt">이클립스 SVN 경험 有</dd>
+                <dd class="hyunju__skillTxt">NPM 사용 경험 有</dd>
+            </dl>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

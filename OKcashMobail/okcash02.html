@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ok CachBack</title>
+</head>
+
+<link rel="stylesheet" href="css/style2.css">
+
+<body>
+    <div id="wrap">
+        <div id="container">
+            <header id="header">
+                <div class="ham">
+                    <div class="bar">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="img1">
+                    <a href="#"><span>230P</span><img src="images/icon1.PNG" alt="ok"></a></div>
+                <div class="img2">
+                    <a href="#"><img src="images/icon2.PNG" alt="ok"></a></div>
+                <nav class="nav">
+                    <ul class="main">
+                        <li><a href="okcash01.html">홈</a>
+                        </li>
+                        <li class="active"><a href="okcash02.html">바로적립</a>
+                        </li>
+                        <li><a href="#">참여적립</a>
+                        </li>
+                        <li><a href="#">구매적립</a>
+                        </li>
+                        <li><a href="#">오사마라켓</a> 
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <!--//header-->
+    
+            <section id="banner">
+                <h3>클릭한번으로<br> 바로적립</h3>
+                <img src="images/icon3.PNG" alt="적립">
+            </section>
+            <!--//banner-->
+    
+            <section id="content">
+                <div class="cont1">
+                    <h3>스타벅스커피 2잔을<br>시원하게 팡팡!</h3>
+                    <em>20.05.01~20.06.30</em>
+                    <img src="images/c200.PNG" alt="스타벅스">
+                </div>
+                <div class="cont2">
+                    <h3>최저가 쇼핑에<br>OK캐쉬백을 더하다! 핵이득</h3>
+                    <em>20.01.13~20.12.31</em>
+                    <img src="images/c205.PNG" alt="8만">
+                </div>
+                <div class="cont3">
+                    <h3>이보영의 다이어트<br>굶지 않고 하루 2번!</h3>
+                    <em>19.10.17~20.06.30</em>
+                    <img src="images/c201.PNG" alt="이보영">
+                </div>
+                <div class="cont4">
+                    <h3>이보영의 다이어트<br>굶지 않고 하루 2번!</h3>
+                    <em>20.10.17~20.06.30</em>
+                    <img src="images/c202.PNG" alt="이보영">
+                </div>
+                <div class="cont5">
+                    <h3>아이클타임으로 우리아이<br>키 성장을 선물하세요</h3>
+                    <em>19.08.22~20.06.30</em>
+                    <img src="images/c204.PNG" alt="내차보험">
+                </div>
+            </section>
+            <!--//section-->
+            <footer id="footer">
+                <img src="images/facebook.PNG" alt="페이스북">
+                <h3>facebook 공식 사이트</h3>
+                <em>facebook - 세상과 소통하는 길</em>
+                <div class="ban">
+                    <a href="https://www.facebook.com/"><p>열기</p></a>
+                </div>
+            </footer>
+            <!--//footer-->
+            <div class="top"><a href="#wrap">TOP</a></div>
+            <!--//top-->
+        </div><!--//container-->      
+    </div>
+
+</body>
+
+<script src="../parallax/js/jquery.min_1.12.4.js"></script>
+<script src="../parallax/js/jquery-ui.min.js"></script>
+
+<script>
+    //햄버거 메뉴
+    $("#header .ham .bar").click(function(){
+        $(this).toggleClass("on")
+        });  
+
+
+    // a 태그 선택(href="#")
+    $("a[href^='#wrap']").click(function(e){
+        e.preventDefault();
+        let target = $(this).attr("href")
+        let offset = $(target).offset().top;
+        //alert(target)
+        $("html, body").animate({ scrollTop:offset},1000,"easeInOutExpo");
+    });
+</script>
+
+    
+           
+</html>

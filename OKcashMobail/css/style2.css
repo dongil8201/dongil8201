@@ -1,0 +1,209 @@
+/*  reset */
+* {margin: 0; padding: 0;}
+a { color: #000; text-decoration: none;}
+li { list-style: none;}
+
+/*layout*/
+#wrap {width: 1000px; margin: 0 auto;}
+#container {}
+#header {height: 150px; }
+#banner {height: 150px;  }
+#content {height: 1000px; }
+#footer {  }
+
+/*header*/
+#header {
+   position: relative;
+}
+#header .img1 {
+   position: absolute; top: 100px; left: 400px;
+ }
+ #header .img1 span { 
+    font-size: 34px;
+    font-weight: bold;
+    padding-right: 15px;
+ }
+#header .img2 { 
+   position: absolute; top: 100px; right: 100px;
+}
+#header .ham {
+   flex: 1 1 0; position: relative;   
+}       
+#header .ham .bar {
+  position: absolute; 
+  left: 100px; top: 120px; 
+  transform: translateY(-50%); 
+  width: 50px; height: 50px; 
+  cursor: pointer;
+}       
+#header .ham .bar span{
+  width: 30px; height: 3px;
+  background: #000;
+  position: relative;
+  display: block;
+  transition: all 0.5s ease;
+  margin-top: 25px;
+  margin-left: 10px; 
+}       
+#header .ham .bar span::before {
+  content: '';
+  width: 100%; height: 3px;
+  background: #000;
+  position: absolute;
+  right: 0; top: -11px;
+  transform-origin: left;
+  transition: all 0.5s ease;
+}       
+#header .ham .bar span::after {
+  content: '';
+  width: 100%; height: 3px;
+  background: #000;
+  position: absolute;
+  right: 0; bottom: -11px;
+  transform-origin: right;
+  transition: all 0.5s ease;
+}       
+#header .ham .bar.on span {transform: rotate(360deg);}
+#header .ham .bar.on span::before {top: -10px; transform: translateX(15%) rotate(45deg);}
+#header .ham .bar.on span::after {bottom:-10px; transform: translateX(-85%) rotate(135deg);}
+#header .nav {
+   margin-top: 20px;
+   position: absolute;
+   top: 150px; 
+   height: 100px;
+     }  
+#header .nav .main { 
+   display: flex; justify-content: space-between; 
+}
+#header .nav .main li { 
+   z-index: 5;
+   font-size: 20px;
+   font-weight: bold;
+   position: relative;
+   padding: 60px;
+}
+#header .nav .main li a:hover{opacity: .3; }
+/*banner*/
+#banner {
+   position: relative;
+   margin-top: 120px; 
+   border-top:2px solid #ccc ;
+   }
+#banner h3 {
+   margin-top: 20px;
+  padding-left: 100px;
+   font-size: 45px;
+   font-weight: bold;
+   line-height: 1.5;
+ }
+#banner img {
+
+   position: absolute;
+   top: 90px; left: 280px;
+ }
+ /*content*/
+ #content {height: 745px; }
+ /*cont1*/
+ #content .cont1 {
+    margin-top: 20px;
+    position: relative; 
+    height: 150px;
+    border-bottom: 2px solid #ccc ;
+  }
+ #content .cont1 h3 {position: absolute; top: 15px; left: 300px; font-size: 25px;}
+ #content .cont1 em {position: absolute; top: 100px; left: 300px; color:#ccc; font-style: normal;}
+ #content .cont1 img {position: absolute; top: 10px; left: 100px; width: 130px;}
+
+   /*cont2*/
+   #content .cont2 {
+      margin-top: 20px;
+      position: relative; 
+      height: 150px;
+      border-bottom: 2px solid #ccc ;
+    }
+   #content .cont2 h3 {position: absolute; top: 15px; left: 300px; font-size: 25px;}
+   #content .cont2 em {position: absolute; top: 100px; left: 300px; color:#ccc; font-style: normal;}
+   #content .cont2 img {position: absolute; top: 10px; left: 100px; width: 130px;}
+
+   /*cont3*/
+   #content .cont3 {
+      margin-top: 20px;
+      position: relative; 
+      height: 150px;
+      border-bottom: 2px solid #ccc;
+    }
+   #content .cont3 h3 {position: absolute; top: 15px; left: 300px; font-size: 25px;}
+   #content .cont3 em {position: absolute; top: 100px; left: 300px; color:#ccc; font-style: normal;}
+   #content .cont3 img {position: absolute; top: 10px; left: 100px; width: 130px;}
+
+   /*cont4*/
+   #content .cont4 {
+      margin-top: 20px;
+      position: relative; 
+      height: 150px;
+      border-bottom: 2px solid #ccc ;
+    }
+   #content .cont4 h3 {position: absolute; top: 15px; left: 300px; font-size: 25px;}
+   #content .cont4 em {position: absolute; top: 100px; left: 300px; color:#ccc; font-style: normal;}
+   #content .cont4 img {position: absolute; top: 10px; left: 100px; width: 130px;}
+
+    /*cont5*/
+    #content .cont5 {
+      margin-top: 20px;
+      position: relative; 
+      height: 150px;
+      border-bottom: 2px solid #ccc ;
+    }
+   #content .cont5 h3 {position: absolute; top: 15px; left: 300px; font-size: 25px;}
+   #content .cont5 em {position: absolute; top: 100px; left: 300px; color:#ccc; font-style: normal;}
+   #content .cont5 img {position: absolute; top: 10px; left: 100px; width: 130px;}
+
+   /*footer*/
+   #footer {
+      margin-top: 20px;
+      position: relative; 
+      height: 200px;
+      margin-bottom: 20px;
+    }
+   #footer h3 {position: absolute; top: 120px; left: 300px; font-size: 25px;}
+   #footer em {position: absolute; top: 160px; left: 300px; color:#ccc; font-style: normal;}
+   #footer img {position: absolute; top: 110px; left: 100px;}
+
+   #footer .ban p {
+      position: relative;
+      width: 100px;
+      height: 45px;
+      padding-top: 10px;
+      margin: 20px 0;
+      background:#FF285B; 
+      border-radius: 45% / 45%;
+      color: white;
+      font-size: 25px;
+      text-align: center;
+      text-indent: .1em;
+      position: absolute;
+      top: 80px; right: 0;
+  }
+  #footer .ban p:hover {transform: scale(1.2, 1.2); opacity: 1;}
+  #footer .ban p::before{
+      content: '';
+      position: absolute;
+      top: 30%;
+      bottom: 30%;
+      right: -5%;
+      left: -5%;
+      border-radius: 50% / 50%;
+  }
+
+  /*top*/
+  .top a{
+   position: absolute; top:1200px; right: 465px;
+   background: #fff; color:#000;
+   border: 1px solid #000;
+   border-radius: 50% / 50%;
+   font-size: 20px;
+   padding: 20px;
+   display: inline-block;
+   text-align: center;
+   line-height: 30px;
+}

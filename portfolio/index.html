@@ -3,15 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>portfolio</title>
 </head>
 
 <link rel="stylesheet" href="css/style.css">
-<link href="https://fonts.googleapis.com/css2?family=Overpass:wght@100;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONB-Vb.woff">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.0/WindyLavender.woff">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
 
 <body>
     <div id="warp">
+        <div class="cursor"></div>  
+        <div class="cursor-follower"></div>
+        <!--header-->
         <header id="header">
             <div class="imglogo">
                 <h1><img src="image/logo.PNG" alt="portfolio"></h1>
@@ -35,17 +40,26 @@
             </div>
             <div class="arrow"><a href="#"><img src="image/arrow.PNG" alt="화살표"></a></div>
             <h2 class="animate__animated animate__bounce">WEB<br>PUBLISHERS</h2>
-            <p>KIM DONG-IL</p>
+            <!-- <div class="mainname">
+                <p class="hello" style="opacity: 1;">
+                    <span>Welcome</span>
+                    <span> to my</span>
+                    <span> home</span>
+                </p>
+                
+            </div> -->
+            <p class="name">KIM DONG-IL</p>
             <strong class="line"></strong> 
-            <div class="well">
+            <!-- <div class="well">
                 <div class="box1">
                     <h4><button class="btn btn1"></button></h4>
                     <div class="circle circle1"></div>
                 </div>                        
-            </div>
+            </div> -->
         </header>
         <!--//header-->
 
+         <!--banner-->
         <banner id="banner">
             <div class="bannerwarp">
                 <div class="ban1">
@@ -63,47 +77,121 @@
                     </ul>
                 </div>
                 <div class="ban3">
-                    <a href="#"><p>이력서 보기</p></a>
-                    
+                    <a href="#"><p>이력서<br>보기</p></a>
                 </div>
             </div>
         </banner>
         <!--//banner-->
+
+        <!--content1-->
         <section id="contents1">
             <article class="cont1">
-                <a href="http://dongil8201.dothome.co.kr/site-webstandard/index.html"><h3 class="animate__animated fadeInLeftBig">WEBSTANDARD</h3></a>
+                <a href="http://dongil8201.dothome.co.kr/site-webstandard/index.html">
+                    <h3 class="animate__animated fadeInLeftBig">WEBSTANDARD</h3></a>
                 <div class="box1">
-                    <img src="image/webstandard.png" alt="웹표준">
+                    <h1 class="animate__animated animate__pulse"><img src="image/f1.jpg" alt="웹표준"></h1>
+                    <p>웹 표준은 월드 와이드 웹의 측면을 서술하고<br> 정의하는 공식 표준이나 다른 기술 규격을<br>  가리키는일반적인 용어이다. 최근에 이 용어는<br>  웹 사이트를 작성하는 데 중요도가 높아지고<br>  있으며 웹 디자인, 개발과 관계가 있습니다.</p>
                 </div>
             </article>
             <article class="cont2">
-                <a href="http://dongil8201.dothome.co.kr/site-responsive/index.html"><h3 class="animate__animated fadeInRightBig">RESPONSIVE</h3></a>
+                <a href="http://dongil8201.dothome.co.kr/site-responsive/index.html">
+                    <h3 class="animate__animated fadeInRightBig">RESPONSIVE</h3></a>
                 <div class="box2">
-                    <img src="image/responsive.png" alt="반응형">
+                    <h1 class="animate__animated animate__pulse"><img src="image/f2.jpg" alt="반응형"></h1>
+                    <p>반응형 웹 디자인이란<br> 하나의 웹사이트에서 PC, 스마트폰, 태블릿 PC 등<br> 접속하는 디스플레이의 종류에 따라<br> 화면의 크기가 자동으로 변하도록 만든 웹페이지<br> 접근 기법을 말합니다.</p>
                 </div>
             </article>
+            <div class="bg">
+
+            </div>
         </section>
          <!--//content1-->
         
+         <!--content2-->
          <section id="contents2">
+            <h2>마우스와 애니메이션 효과는 시선을 집중시킬 때<br> 좋은 효과를 발휘합니다.</h2>
             <article class="cont1">
-                <a href="#"><h3 class="animate__animated fadeInLeftBig">ANIMATION</h3>
-                <div class="box1"></a>
-                    <img src="image/computer.png" alt="애니메이션">
+                <a href="#"><h3 class="animate__animated fadeInLeftBig">ANIMATION</h3> </a>
+                <div class="box1">
+                    <h1 class="animate__animated animate__pulse"><img src="image/f4.jpg" alt="애니메이션"></h1>
                 </div>
             </article>
             <article class="cont2">
                 <a href="#"><h3 class="animate__animated fadeInRightBig">MOUSE</h3></a>
                 <div class="box2">
-                    <img src="image/mouse.png" alt="마우스">
+                    <h1 class="animate__animated animate__pulse"><img src="image/f5.jpg" alt="마우스"></h1>
                 </div>
             </article>
+            <div class="bg">
+                
+            </div>
         </section>
          <!--//content2-->
-        <section></section>
-        <section></section>
-        <section></section>
-        <footer></footer>
+
+        <!--content3-->
+        <section id="contents3">
+            <div class="cont1">
+                <p>Javascript는 기본기부터 착실하게 해오고 있습니다.<br> 아직 많은점이 부족하지만 특히 Javascript는 기본기가 부족하면<br> 모래성처럼 무너질 분야라 생각하며 기초를 견고하게 다지는중입니다.<br> 차후 프런트엔드 개발자로의 발전을 염두해 두고 차근차근해 나가는 중입니다.</p>
+            </div>
+            <article class="cont2">
+                <h2><img src="image/java05.jpg" alt="자바스크립트"></h2>
+            </article>
+            
+        </section>  
+        <!--//content3-->
+
+        <!--content4-->
+        <section id="contents4">
+            <!--slider-->
+            <div class="slide-warp">
+                <div class="slide-img">
+                    <div class="slides s1"><img src="image/javajava1.jpg" alt="이미지1"></div>
+                    <div class="slides s2"><img src="image/javajava2.jpg" alt="이미지2"></div>
+                    <div class="slides s3"><img src="image/javajava3.jpg" alt="이미지3"></div>
+                </div>
+            </div>
+            <div class="slider-btn">
+                <a href="#" class="prev">prev</a>
+                <a href="#" class="next">next</a>
+            </div>
+            <div class="hover-wrap">
+                <figure class="image1">
+                    <img src="image/ja1.jpg" alt="ad">
+                    <figcaption>
+                        <h3>안녕하세요</h3>
+                        <p>김동일입니다.</p>
+                      </figcaption>
+                </figure>
+            </div>
+            
+        </section>
+         <!--//content4-->
+         <!--footer-->
+        <footer id="footer">
+            <h2>어쩌다보니 여기까지 읽으셨네 그려? <br> 나 취직시켜 줄텨? 잘해줄께~ 한번 믿어봐요 </h2>
+            <div class="sbox">
+                <p><a href="#">이력서 쓰기 힘드네</a></p>
+            </div>
+            <div class="mbox">
+                <p>특별히 쓸말도 없고 하고싶은 말도 없는디 그래도 열심히 해볼랑께 쪼까 도와주쇼잉~</p>
+                <ul class="footernav">
+                    <li><a href="#">도와주기</a></li>
+                    <li><a href="#">고용하기</a></li>
+                </ul>
+            </div>
+            
+
+            <div class="bbox">
+                <ul class="cursor1">
+                    <li><a href="#">도와줄꺼요?</a></li>
+                    <li><a href="#">안도와줄꺼요?</a></li>
+                    <li><a href="#">화이팅!</a></li>
+                    <li><a href="#">정신차리고!</a></li>
+                </ul>
+            </div>
+        </footer>
+        <!--//footer-->
+
     </div>
     
 <script src="js/jquery.min_1.12.4.js"></script>
@@ -131,12 +219,88 @@
         });
 
 //gsap
-$(".btn1").show(function(){
-            gsap.to(".box1 .circle1", {duration:1, repeat:9999, yoyo:true, left:"40%", rotationY:"0deg" , ease:"power1.out"});
-        });
+// $(".btn1").show(function(){
+//             gsap.to(".box1 .circle1", {duration:1, repeat:9999, yoyo:true, left:"40%", rotationY:"0deg" , ease:"power1.out"});
+//         });
         
 //제목 애니메이션
+
 document.documentElement.style.setProperty('--animate-duration', '2s');
+
+
+        //슬라이드
+        const slideWarp =$(".slide-warp");
+        const slideImg =$(".slide-img");
+        const slides = $(".slides");
+        const slideBtn = $(".slider-btn");
+
+        let slideCount = slides.length;
+        let slideWidth = slides.width();
+        let slideHeight = slides.height();
+        let slideTotalWidth = slideCount * slideWidth;
+
+        slides.css({width:slideWidth, height:slideHeight});
+        slideImg.css({width:slideTotalWidth, height:slideHeight});
+        slideImg.css({"margin-left" : -slideWidth});
+        $(".slides:last-child").prependTo(slideImg);
+
+        function moveLeft(){
+            slideImg.animate({left: +slideWidth},400, function(){
+                $(".slides:last-child").prependTo(slideImg);
+                slideImg.css("left","");
+            })
+        }
+
+        function moveRight(){
+            slideImg.animate({left: -slideWidth},400, function(){
+                $(".slides:first-child").appendTo(slideImg);
+                slideImg.css("left","");
+            })
+        }
+       
+        slideBtn.find(".prev").click(function(e){
+            e.preventDefault();
+            moveLeft()
+        });
+
+        slideBtn.find(".next").click(function(e){
+            e.preventDefault();
+            moveRight()
+        }); 
+
+        
+
+            $(document).mousemove(function(e){
+                gsap.to(".cursor",{duration: .5, left: e.pageX-5, top: e.pageY-5});
+            });
+        
+        //마우스 오버효과 -자바
+             document.querySelectorAll("a").forEach(elem =>{
+                    elem.addEventListener("mouseenter", () =>{
+                        document.querySelector(".cursor").classList.add("active");
+                        document.querySelector(".cursor-follower").classList.add("active")
+                    });
+                    elem.addEventListener("mouseleave", () =>{
+                        document.querySelector(".cursor").classList.remove("active");
+                        document.querySelector(".cursor-follower").classList.remove("active");
+                });
+            });
+        
+//제목 스르륵
+//         var $mainName = $('.hello');
+//         var $mainStit = $('.name');
+        
+        
+//         // $mainName.animate({width:90, opacity:1},400);
+
+//         // $mainStit.delay(1000).animate({opacity:1},1000,function () {
+//         //     $mainBtit.animate({opacity:1},1000, function () {
+//         //         $mainXstit.animate({opacity:1},500)
+//         //     });
+//         // });
+
+//  $mainName.animate({width:0, opacity:1},400);
+//             $mainStit.animate({opacity:1},1000);
 
 //
  //contents1 제목 애니메이션 show
