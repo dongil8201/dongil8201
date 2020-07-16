@@ -131,12 +131,6 @@ a { text-decoration: none;
     animation-iteration-count: 100;
 }
 
-/*#header .mainname { }
- #header .mainname .hello {
-    font-size: 100px; 
-    position: absolute; top: 500px; left: 130px; 
-    color: #FF285B;
-} */
 #header .name {
     margin-top: 20px;
     font-size: 100px; 

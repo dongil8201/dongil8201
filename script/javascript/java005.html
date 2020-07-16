@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<script>
+
+// var 참조 변수 = setInterval(function(){코드}, 시간 간격(ms));
+// var 참조 변수 = setInterval("코드", 시간 간격(ms));
+// clearInterval(참조 변수);
+
+var addNum = 0;
+var subNum = 1000;
+
+var auto_1 = setInterval(function(){
+    addNum++;
+    console.log("addNum:"+addNum);
+},3000);
+
+var auto_2 = setInterval(function(){
+    subNum--;
+    console.log("subNum:"+subNum);
+},3000);
+
+// var 참조 변수 = setTimeout(function(){자바스크립트 코드}, 시간 간격(msc));
+// var 참조 변수 = setTimeout("자바스크립트 코드", 시간간격(msc));
+var tim = setTimeout(function(){
+    i++;
+},5000);
+
+var tim = setTimeout("i++", 5000);
+// clearTimeout(참조 변수);
+
+clearTimeout(tim);
+
+
+
+
+
+</script>
+
+
+</head>
+<body>
+
+    <button onclick="clearInterval(auto_1)">증가 정지</button>
+    <button onclick="clearInterval(auto_2)">감소 정지</button>
+
+
+
+</body>
+</html>

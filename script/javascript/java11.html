@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>java</title>
+
+
+    <script>
+
+
+        //전역 변수와 지역 변수의 개념과 차이
+        var 변수명;                   //전역변수
+
+        function 함수명(){
+            var 변수명;               //지역변수
+        }
+
+        //전역함수와 지역 함수의 차이
+
+        function 함수명1(){
+            자바스크립트코드;
+        }
+        function 함수명2(){
+            function 함수명3(){
+                자바스크립트코드;
+            }
+        }
+        //스코프 밖에서 myFnc() 함수를 호출하면 함수 스코프에서 선언한 지역 함수가 아닌 전역 함수가
+        //실행되어 '전역함수'라는 경고 창이 나타납니다.
+
+        function myFnc(){
+            alert("전역 함수");
+        }
+        function outerFnc(){
+            function myFnc(){
+                alert("지역 함수");
+            }
+            myFnc();                                    //지역함수 호출
+        }
+        outerFnc();
+        myFnc();                                        //전역함수 호출
+
+
+    </script>
+
+
+
+
+</head>
+<body>
+    
+</body>
+</html>

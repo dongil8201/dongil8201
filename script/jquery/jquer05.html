@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery.min_1.12.4.js"></script>
+    <script>
+        // $("요소 선택").효과 메서드(효과 소요 시간, 가속도, 콜백 함수) 
+
+        $(function(){
+            $(".btn2").hide();
+
+            $(".btn1").on("click", function(){
+                $(".box").slideUp(1000, "linear", function(){
+                    $(".btn1").hide();
+                    $(".btn2").show();
+                });
+            });
+            $(".btn2").on("click",function(){
+                $(".box").fadeIn(1000, "swing",function(){
+                    $(".btn2").hide();
+                    $(".btn1").show();
+                });
+            });
+            $(".btn3").on("click",function(){
+                $(".box").slideToggle(1000, "linear");
+            });
+            $(".btn4").on("click", function(){
+                $(".box").fadeTo("fast", 0.3);
+            });
+            $(".btn5").on("click", function(){
+                $(".box").fadeTo("fast", 1);
+            });
+        });
+    </script>
+
+    <style>
+        .content{
+            width: 400px;
+            background: #eee;
+        }
+    </style>
+     
+
+
+</head>
+<body>
+    <p>
+        <button class="btn1">slideUp</button>
+        <button class="btn2">btn2</button>
+    </p>
+    <p>
+        <button class="btn3">toggleslide</button>
+    </p>
+    <p>
+        <button class="btn4">fadeTo(0.3)</button>
+        <button class="btn5">fadeTo(1)</button>
+    </p>
+    <div class="box">
+        <div class="content">
+            lorem ipsum...
+        </div>
+    </div>
+</body>
+</html>

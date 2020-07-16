@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>java</title>
+
+    <script>
+
+
+        //객체 생성자 함수
+
+        // function 함수명(매개변수1, 매개변수2,.......매개변수n){              //객체 생성자 함수
+        //     this.속성명 = 새 값;
+        //     this.함수명 = function(){
+        //         자바스크립트코드;
+        //     }
+        // }
+
+        // var 참조 변수(인스턴스 네임) = new 함수명();                        //객체 생성
+        // var 참조 변수= { 속성 : 새 값, 함수명 : function(){...}}
+
+            function CheckWeight(name, height, weight){
+                this.userName = name;
+                this.userHeight = height;
+                this.userWeight = weight;
+                this.minWeight;
+                this.maxWeight;
+
+                this.getInfo = function(){
+                    var str = ""
+                    str+="이름:"+ this.userName+",";
+                    str+="키:"+ this.userHeight+",";
+                    str+="몸무게:"+ this.userWeight+"<br>";
+                    return str;
+                }
+                this.getResult = function(){
+                    this.minWeight = (this.userHeight - 100)*0.9-5;
+                    this.maxWeight = (this.userHeight - 100)*0.9+5;
+
+                    if(this.userWeight >=this.minWeight
+                        && this.userWeight <= this.maxWeight){
+                            return "정상 몸무게 입니다.";
+                        }else if(this.userWeight < this.minWeight){
+                            return "정상 몸무게보다 미달입니다."
+                        }else{
+                            return "정상 몸무게보다 초과입니다."
+                        }
+                }
+            }
+            var kim= new CheckWeight("김동일", 173,64);
+            var park = new CheckWeight("박동일",180,88);
+            console.log(kim);
+            console.log(park);
+
+            document.write(kim.getInfo());
+            document.write(kim.getResult());
+
+    </script>
+
+
+
+
+
+</head>
+<body>
+    
+</body>
+</html>

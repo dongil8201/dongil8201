@@ -4,58 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>portfolio</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+
 </head>
 
-<link rel="stylesheet" href="css/style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONB-Vb.woff">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.0/WindyLavender.woff">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
 
 <body>
+    <!--cursor-->
+    <div class="cursor"></div>  
+    <div class="cursor-follower"></div>
+    <!--//cursor-->
+
     <div id="warp">
-        <div class="cursor"></div>  
-        <div class="cursor-follower"></div>
+    <!--nav-->   
+        <div class="nav">
+            <div class="ham">
+                <div class="bar">
+                    <span></span>
+                </div>
+            </div>
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Site</a></li>
+                <li><a href="#">Scirpt</a></li>
+                <li><a href="#">Work</a></li>
+            </ul>
+        </div>
+    <!--//nav-->
+
+
+
+
         <!--header-->
         <header id="header">
             <div class="imglogo">
                 <h1><img src="image/logo.PNG" alt="portfolio"></h1>
                 <em>PORT<br>FOLIO</em>
             </div>
-            <div class="nav">
-                <div class="ham">
-                    <div class="bar">
-                        <span></span>
-                    </div>
-                </div>
-                <ul>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Site</a></li>
-                    <li><a href="#">Scirpt</a></li>
-                    <li><a href="#">Work</a></li>
-                </ul>
-            </div>
+         
             <div class="work">
                 <h3>work</h3>
             </div>
             <div class="arrow"><a href="#"><img src="image/arrow.PNG" alt="화살표"></a></div>
             <h2 class="animate__animated animate__bounce">WEB<br>PUBLISHERS</h2>
-            <!-- <div class="mainname">
-                <p class="hello" style="opacity: 1;">
-                    <span>Welcome</span>
-                    <span> to my</span>
-                    <span> home</span>
-                </p>
-                
-            </div> -->
+         
+            </div> 
             <p class="name">KIM DONG-IL</p>
             <strong class="line"></strong> 
-            <!-- <div class="well">
-                <div class="box1">
-                    <h4><button class="btn btn1"></button></h4>
-                    <div class="circle circle1"></div>
-                </div>                        
-            </div> -->
+            
         </header>
         <!--//header-->
 
@@ -111,20 +110,21 @@
          <section id="contents2">
             <h2>마우스와 애니메이션 효과는 시선을 집중시킬 때<br> 좋은 효과를 발휘합니다.</h2>
             <article class="cont1">
-                <a href="#"><h3 class="animate__animated fadeInLeftBig">ANIMATION</h3> </a>
+                <div class="sbox1">
+                    <a href="#"><h3 class="animate__animated fadeInLeftBig">ANIMATION</h3> </a>
+                </div>
                 <div class="box1">
                     <h1 class="animate__animated animate__pulse"><img src="image/f4.jpg" alt="애니메이션"></h1>
                 </div>
             </article>
             <article class="cont2">
-                <a href="#"><h3 class="animate__animated fadeInRightBig">MOUSE</h3></a>
+                <div class="sbox2">
+                    <a href="#"><h3 class="animate__animated fadeInRightBig">MOUSE</h3></a>
+                </div>         
                 <div class="box2">
                     <h1 class="animate__animated animate__pulse"><img src="image/f5.jpg" alt="마우스"></h1>
                 </div>
             </article>
-            <div class="bg">
-                
-            </div>
         </section>
          <!--//content2-->
 
