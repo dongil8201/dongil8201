@@ -267,6 +267,13 @@ body{
     margin-top: 150px;
   }
 }
+@media (max-width: 600px){
+  .name2{
+    position: absolute;
+    left: 0;
+    top: 95px;
+  }
+}
 @media (max-width: 320px){
   #header {height: auto;}
   .cursor {display: none}
@@ -703,6 +710,7 @@ color:#ffffff;
   }
 }
 @media (max-width:1800px){
+  #banner{height: auto;}
   #banner .ban1 h3{
     font-size: 40px;
     position: absolute;
@@ -717,6 +725,7 @@ color:#ffffff;
    }
 }
 @media (max-width:1600px){
+  #banner{height: auto;}
   #banner .ban1 h3{
     font-size: 40px;
     position: absolute;
@@ -799,6 +808,7 @@ color:#ffffff;
     }
   }
   @media (max-width:600px){
+    #banner{height: auto;}
     #banner .ban3{
       margin-top: -140px;
       padding-right: 105px;
@@ -1183,7 +1193,7 @@ color:#ffffff;
 }
 #animation h1:hover:before,
 #animation h1:hover:after{
-   width: 95%;
+   width: 100%;
    opacity:1;
    left:0;
 
@@ -1191,10 +1201,74 @@ color:#ffffff;
 #animation h1:hover ~ h2{
   opacity:0;
 }
+@media (max-width:600px){
+  #animation h1{
+    font-size: 40px;
+  }
+  #animation h1:before,
+  #animation h1:after{
+        height: 4px;
+      }
+  #animation h1:before,
+  #animation h1:after{
+        height: 3px;
+      }
+  #animation h1:hover{
+    letter-spacing:25px;
+  }
+}
+@media (max-width:480px){
+  #animation h1{
+    font-size: 25px;
+  }
+  #animation h1:before,
+  #animation h1:after{
+        height: 3px;
+      }
+  #animation h1:hover{
+    letter-spacing:23px;
+  }
+}
+  @media (max-width:380px){
+    #animation h1{
+      font-size: 15px;
+    }
+    #animation h1:before,
+    #animation h1:after{
+        height: 2px;
+      }
+      #animation h1:hover{
+        letter-spacing:23px;
+      }
+    }
+  @media (max-width:340px){
+    #animation h1{
+      font-size: 10px;
+    }
+    #animation h1:before,
+    #animation h1:after{
+      height: 1px;
+    }
+    #animation h1:hover{
+      letter-spacing:22px;
+    }
+  }
+  @media (max-width:320px){
+    #animation h1{
+      font-size: 6px;
+    }
+    #animation h1:before,
+    #animation h1:after{
+      height: 0.8px;
+    }
+    #animation h1:hover{
+      letter-spacing:20px;
+    }
+  }
 /*animaton*/
 
 /*content6*/
-#content6 {
+#content6 { 
   margin:0 auto 0 auto;
   width:100%;
   display:flex;
@@ -1205,7 +1279,7 @@ color:#ffffff;
   width:380px;
   height:380px;
   margin:10px;
-  background-color:#FF285B;
+  background-color:#381C75;
   display:inline-block;
   background-size:cover;
   position:relative;
@@ -1214,6 +1288,7 @@ color:#ffffff;
   overflow:hidden;
   color:white;
   font-family: 'Poppins', sans-serif;
+  font-family: 'S-CoreDream-6Bold';
 }
 #content6 img {
   height:100%;
@@ -1234,7 +1309,7 @@ color:#ffffff;
   font-family: 'Poppins', sans-serif;
   font-weight:300;
   font-size: 50px;
-  margin:0;
+  margin:-10px;
   text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
 }
 #content6 .title p{
@@ -1244,7 +1319,6 @@ color:#ffffff;
   transform: translateX(-200px);
   transition-delay: 0.2s
 }
-
 #content6 .animate-text
 {
   opacity:0;
@@ -1269,19 +1343,19 @@ color:#ffffff;
   margin-bottom: 50px;  
 }
 @media (max-width:1020px){
-  #content5{
+  #content6{
     display: block;
   }
-  #content5 .title{
+  #content6 .title{
     width: 95%;
     margin-right: 4%;
   }
 }
 @media (max-width:320px){
-  #content5{
+  #content6{
     display: block;
   }
-  #content5 .title{
+  #content6 .title{
     width: 95%;
     margin-left: 4%;
   }
@@ -1315,11 +1389,6 @@ color:#ffffff;
           max-width: 0;
       }
   }
-   #footer .sbox p {
-    font-size: 30px;
-    text-align: center;
-    font-family: 'S-CoreDream-6Bold';
-   }  
    #footer .mbox {
      display: flex;
      justify-content: center;
@@ -1343,9 +1412,9 @@ color:#ffffff;
     #footer .footernav{
       position: relative;
       display: flex; 
-      
     }
     #footer .footernav  li{
+      color: #381C75;
       font-size: 50px;
       margin-top: 2px;
       font-family: 'S-CoreDream-6Bold';
@@ -1353,20 +1422,20 @@ color:#ffffff;
       position: relative;
       text-align: center;
     }
-    #footer .footernav li a.effect-underline:after {
+    #footer .footernav li.effect-underline:after {
       content: '';
       position: absolute;
-      left: 20px;
+      left: 26px;
       display: inline-block;
       height: 1px;
-      width: 89%;
-      border-bottom: 2px solid;
+      width: 94%;
+      border-bottom: 2px solid #FF1177;
       margin-top: 70px;
       opacity: 0;
       transition: opacity 0.8s, transform 0.8s;
       transform: scale(0,1);
     }
-    #footer .footernav li a.effect-underline:hover:after {
+    #footer .footernav li.effect-underline:hover:after {
       opacity: 1;
       transform: scale(1);
     }
@@ -1405,3 +1474,4 @@ color:#ffffff;
     @keyframes radius2 {
       50% {border-radius:1px 1000px;}
     }
+  
